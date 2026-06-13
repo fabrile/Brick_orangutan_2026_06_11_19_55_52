@@ -12,6 +12,7 @@ let LogoASL;
 let LogoPotrero;
 let LogoSanLuis;
 let PuntoMapa;
+let LogoTaller = null;
 
 let artistasv =  460
 let horariosv =  1000
@@ -111,7 +112,14 @@ function mostrarLogos(){
 
     // Logo Recorrido
     f= 334/Recorrido.height
-    image(Recorrido, 33, 33, Recorrido.width*f, Recorrido.height*f);
+    let recorridoW = Recorrido.width*f;
+    image(Recorrido, 33, 33, recorridoW, Recorrido.height*f);
+
+    // Logo Taller al lado si existe
+    if (LogoTaller) {
+      let fTaller = 300 / LogoTaller.height;
+      image(LogoTaller, 1080*3/4 - LogoTaller.width*fTaller/2, 33 + (334 - 300) / 2, LogoTaller.width * fTaller, 300);
+    }
 
     f= 1000/Recorrido.height
     tint(100, 50)
@@ -250,6 +258,44 @@ function mostrarMenuCarga() {
     return grupo;
   }
 
+  // Función auxiliar para crear campos de subida de archivo
+  function crearGrupoArchivo(labelTexto, id) {
+    let grupo = document.createElement('div');
+    grupo.className = 'form-group';
+    
+    let label = document.createElement('label');
+    label.innerText = labelTexto;
+    label.setAttribute('for', id);
+    grupo.appendChild(label);
+    
+    let input = document.createElement('input');
+    input.type = 'file';
+    input.id = id;
+    input.accept = 'image/*';
+    input.style.padding = '8px';
+    input.style.border = '1px solid #dcdcdc';
+    input.style.borderRadius = '6px';
+    input.style.backgroundColor = '#fafafa';
+    input.style.fontFamily = 'inherit';
+    
+    input.onchange = function(e) {
+      let file = e.target.files[0];
+      if (file) {
+        let reader = new FileReader();
+        reader.onload = function(event) {
+          loadImage(event.target.result, function(img) {
+            LogoTaller = img;
+            redraw();
+          });
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    
+    grupo.appendChild(input);
+    return grupo;
+  }
+
   // Actividades
   let actValor = Data.Actividades ? Data.Actividades.join('\n') : '';
   let grupoActividades = crearGrupoTextarea('Actividades (coloque una por línea)', 'input-actividades', actValor);
@@ -269,6 +315,10 @@ function mostrarMenuCarga() {
   let dirValor = (Data.Dirección || Data.Direccion || []).join('\n');
   let grupoDireccion = crearGrupoTextarea('Dirección (una por línea)', 'input-direccion', dirValor);
   sidebar.appendChild(grupoDireccion);
+
+  // Subir Logo Taller
+  let grupoLogo = crearGrupoArchivo('Subir Logo Taller (Imagen)', 'input-logo-taller');
+  sidebar.appendChild(grupoLogo);
 
   // Botón para regenerar cartel
   let boton = document.createElement('button');
