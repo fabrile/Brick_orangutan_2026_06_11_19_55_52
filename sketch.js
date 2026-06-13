@@ -292,6 +292,18 @@ function mostrarMenuCarga() {
   };
   sidebar.appendChild(boton);
 
+  // Botón para descargar cartel
+  let botonDescargar = document.createElement('button');
+  botonDescargar.className = 'btn-generate';
+  botonDescargar.style.backgroundColor = '#1b7a43'; // Color verde premium para distinguir la descarga
+  botonDescargar.style.boxShadow = '0 4px 12px rgba(27, 122, 67, 0.2)';
+  botonDescargar.style.marginTop = '10px';
+  botonDescargar.innerText = 'Descargar Cartel (PNG)';
+  botonDescargar.onclick = function() {
+    saveCanvas('cartel_recorrido', 'png');
+  };
+  sidebar.appendChild(botonDescargar);
+
   // Añadir al cuerpo de la página
   document.body.appendChild(sidebar);
 }
