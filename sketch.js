@@ -46,26 +46,6 @@ let Data = {
   ]
 }
 
-/*
-function preload() {
-  // Carga el archivo SVG antes de que inicie el sketch
-  Recorrido = loadImage("assets/Recorrido.png");
-  LogoAVA = loadImage("assets/AVA_white.png");
-  LogoFSA = loadImage("assets/FSA_white.png");
-  LogoJuanaKoslay = loadImage("assets/JuanaKoslay_white.png");
-  LogoElVolcan = loadImage("assets/ElVolcan_white.png");
-  LogoASL = loadImage("assets/ASL_white.png");
-  LogoPotrero = loadImage("assets/ElPotrero_white.png");
-  LogoSanLuis = loadImage("assets/SanLuis_white.png");
-  PuntoMapa = loadImage("assets/Punto_Mapa.svg");
-
-
-  // Fonts
-  robotoFlex = loadFont('fonts/RobotoFlex-VariableFont.ttf');
-
-}
-*/
-
 async function setup() {
   createCanvas(1080, 1335);
    
@@ -97,6 +77,7 @@ async function setup() {
       loadImage("assets/PuntoMapa.png"),
     ]);
     console.log("¡Todos los recursos se cargaron correctamente!");
+    mostrarMenuCarga();
     } catch (error) {
       //console.error("Error crítico durante la carga de assets:", error);
   }
@@ -113,7 +94,7 @@ function draw() {
   mostrarLogos()
   mostrarTexto()
 
-  
+  noLoop()
 }
 
 
@@ -239,5 +220,79 @@ function mostrarTexto(){
 
 
 
+}
+
+function mostrarMenuCarga() {
+  // Crear el contenedor del menú lateral
+  let sidebar = document.createElement('div');
+  sidebar.className = 'control-sidebar';
+
+  // Título del formulario
+  let title = document.createElement('h2');
+  title.innerText = 'Modificar Datos';
+  sidebar.appendChild(title);
+
+  // Función auxiliar para crear grupos de campos de entrada
+  function crearGrupoTextarea(labelTexto, id, valorInicial) {
+    let grupo = document.createElement('div');
+    grupo.className = 'form-group';
+    
+    let label = document.createElement('label');
+    label.innerText = labelTexto;
+    label.setAttribute('for', id);
+    grupo.appendChild(label);
+    
+    let textarea = document.createElement('textarea');
+    textarea.id = id;
+    textarea.value = valorInicial;
+    grupo.appendChild(textarea);
+    
+    return grupo;
+  }
+
+  // Actividades
+  let actValor = Data.Actividades ? Data.Actividades.join('\n') : '';
+  let grupoActividades = crearGrupoTextarea('Actividades (una por línea)', 'input-actividades', actValor);
+  sidebar.appendChild(grupoActividades);
+
+  // Artistas
+  let artValor = Data.Artistas ? Data.Artistas.join('\n') : '';
+  let grupoArtistas = crearGrupoTextarea('Artistas (uno por línea)', 'input-artistas', artValor);
+  sidebar.appendChild(grupoArtistas);
+
+  // Horarios
+  let horValor = (Data.Horario || Data.Horarios || []).join('\n');
+  let grupoHorarios = crearGrupoTextarea('Horarios (uno por línea)', 'input-horarios', horValor);
+  sidebar.appendChild(grupoHorarios);
+
+  // Dirección
+  let dirValor = (Data.Dirección || Data.Direccion || []).join('\n');
+  let grupoDireccion = crearGrupoTextarea('Dirección (una por línea)', 'input-direccion', dirValor);
+  sidebar.appendChild(grupoDireccion);
+
+  // Botón para regenerar cartel
+  let boton = document.createElement('button');
+  boton.className = 'btn-generate';
+  boton.innerText = 'Generar Cartel';
+  boton.onclick = function() {
+    // Actualizar objeto Data
+    Data.Actividades = document.getElementById('input-actividades').value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    Data.Artistas = document.getElementById('input-artistas').value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    
+    let lineasHorarios = document.getElementById('input-horarios').value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    if (Data.Horarios) Data.Horarios = lineasHorarios;
+    if (Data.Horario) Data.Horario = lineasHorarios;
+    
+    let lineasDireccion = document.getElementById('input-direccion').value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    if (Data.Dirección) Data.Dirección = lineasDireccion;
+    if (Data.Direccion) Data.Direccion = lineasDireccion;
+
+    // Ejecutar redibujado de p5.js
+    redraw();
+  };
+  sidebar.appendChild(boton);
+
+  // Añadir al cuerpo de la página
+  document.body.appendChild(sidebar);
 }
 

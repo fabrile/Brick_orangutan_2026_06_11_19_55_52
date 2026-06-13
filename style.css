@@ -9,19 +9,109 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden; /* Evita barras de scroll molestas */
-  background-color: #f0f0f0; /* Fondo gris claro neutral */
+  background-color: #e5e5e5; /* Fondo gris claro neutral */
   
-  /* Centrado absoluto del lienzo en la ventana */
+  /* Centrado del lienzo en el espacio restante */
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
+  
+  padding-left: 10px; /* Espacio para el panel de control */
+  box-sizing: border-box;
+}
+
+/* Panel de control */
+.control-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 380px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.control-sidebar h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #945a0c;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(148, 90, 12, 0.15);
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  height: 110px;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fafafa;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #945a0c;
+  box-shadow: 0 0 0 3px rgba(148, 90, 12, 0.15);
+  background-color: #ffffff;
+}
+
+.btn-generate {
+  background: #945a0c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(148, 90, 12, 0.2);
+}
+
+.btn-generate:hover {
+  background: #ad6d15;
+}
+
+.btn-generate:active {
+  transform: scale(0.98);
 }
 
 /* Regla responsiva para el lienzo (canvas/svg) de p5.js */
 canvas, svg, .p5Canvas {
   display: block;
   max-width: 100vw !important;  /* No supera el ancho de la ventana */
-  max-height: 100vh !important; /* No supera el alto de la ventana */
+  max-height: 95vh !important; /* No supera el alto de la ventana */
   width: auto !important;       /* Permite que se auto-ajuste proporcionalmente */
   height: auto !important;      /* Permite que se auto-ajuste proporcionalmente */
   object-fit: contain !important; /* Mantiene la relación de aspecto original */
