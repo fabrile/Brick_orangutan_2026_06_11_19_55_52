@@ -1,4 +1,8 @@
+// Desactivamos el FES si da falsos positivos con firmas complejas
+p5.disableFriendlyErrors = true; 
+
 //  ------Definicion de logos
+let Fondo;
 let Recorrido;
 let LogoAVA;
 let LogoFSA;
@@ -10,44 +14,74 @@ let LogoSanLuis;
 let PuntoMapa;
 
 
-
-
+/*
 function preload() {
   // Carga el archivo SVG antes de que inicie el sketch
-  Recorrido = loadImage("RECORRIDO.png");
-  LogoAVA = loadImage("AVA_white.svg");
-  LogoFSA = loadImage("FSA_white.svg");
-  LogoJuanaKoslay = loadImage("Juana_Koslay.svg");
-  LogoElVolcan = loadImage("El_Volcan.svg");
-  LogoASL = loadImage("ASL.svg");
-  LogoPotrero = loadImage("El_Potrero.svg");
-  LogoSanLuis = loadImage("San_Luis.svg");
-  PuntoMapa = loadImage("Punto_Mapa.svg");
+  Recorrido = loadImage("assets/Recorrido.png");
+  LogoAVA = loadImage("assets/AVA_white.png");
+  LogoFSA = loadImage("assets/FSA_white.png");
+  LogoJuanaKoslay = loadImage("assets/JuanaKoslay_white.png");
+  LogoElVolcan = loadImage("assets/ElVolcan_white.png");
+  LogoASL = loadImage("assets/ASL_white.png");
+  LogoPotrero = loadImage("assets/ElPotrero_white.png");
+  LogoSanLuis = loadImage("assets/SanLuis_white.png");
+  PuntoMapa = loadImage("assets/Punto_Mapa.svg");
 
 
   // Fonts
   robotoFlex = loadFont('fonts/RobotoFlex-VariableFont.ttf');
 
 }
+*/
 
-
-function setup() {
+async function setup() {
   createCanvas(1080, 1335);
    
-  textFont(robotoFlex);
-  textStyle(BOLD);
+  // 1. Esperamos (await) a que la fuente se cargue por completo antes de seguir
+  try {
+    [
+      robotoFlex,
+      Fondo,
+      LogoAVA,
+      Recorrido,
+      LogoFSA,
+      LogoJuanaKoslay,
+      LogoElVolcan,
+      LogoASL,
+      LogoPotrero,
+      LogoSanLuis,
+      PuntoMapa
+    ] = await Promise.all([
+      loadFont('fonts/RobotoFlex-VariableFont.ttf'),
+      loadImage("assets/Fondo.jpg"),
+      loadImage("assets/AVA_white.png"),
+      loadImage("assets/Recorrido.png"),
+      loadImage("assets/FSA_white.png"),
+      loadImage("assets/JuanaKoslay_white.png"),
+      loadImage("assets/ElVolcan_white.png"),
+      loadImage("assets/ASL_white.png"),
+      loadImage("assets/ElPotrero_white.png"),
+      loadImage("assets/SanLuis_white.png"),
+      loadImage("assets/PuntoMapa.png"),
+    ]);
+    console.log("¡Todos los recursos se cargaron correctamente!");
+    } catch (error) {
+      //console.error("Error crítico durante la carga de assets:", error);
+  }
 
 
 
 }
 
 function draw() {
-  background(220);
+  // background(220);
+  image(Fondo, 0, 0, 1080, 1335);
   noStroke()
   fill(148, 90, 12, 255)
-  rect(0,1335-200,1080/2-10,200,50,0,0,50)
-  rect(1080/2+10,1335-200,1080/2-10,200,0,50,50,0)
+  rect(0,1335-200,1080,200,50,50,50,50)
 
+  fill(220,219,255,255)
+  rect(455,1335-200,5,200,0,0,0,00)
   verLogos()
   
 }
@@ -69,26 +103,32 @@ function verLogos(){
     
 
 
-
+    
     textAlign(CENTER);
     textSize(20);
     fill(20,20,20)
-    textStyle(BOLD);
+    //textStyle(BOLD);
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${800}, 'wdth' ${85}`});
     text("DECLARADO DE INTERÉS", 350, 170);
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${800}, 'wdth' ${110}`});
     text("CULTURAL Y TURÍSTICO", 350, 195);
     textSize(35);
-    textStyle(ITALIC);
-    text("4 y 5 de Julio", 350, 380);
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${600}, 'wdth' ${110}`});
+    text("4 y 5 de JULIO", 350, 380);
 
     //  Mapa
     f= 100/PuntoMapa.height
     image(PuntoMapa, 580, 950, PuntoMapa.width*f, PuntoMapa.height*f);
     
-    textStyle(BOLD)
 
     //Actividades
-    textSize(30)
     textAlign(LEFT)
+    textSize(24)
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${700}, 'wdth' ${110}`});
     text("ACTIVIDADES", 50, 450);
     text("ARTISTAS", 610, 450);
     text("HORARIOS", 50, 950);
@@ -96,30 +136,32 @@ function verLogos(){
 
     // texto y logos organizan
     fill(255,255,255,255);
-    textSize(20);
-    text("Organizan:", 30, 1335 - 165);
+    textSize(23);
+    text("Organizan:", 44, 1167+23);
    
-    f = 100/LogoFSA.height
-    image(LogoFSA, 300, 1335-150, LogoFSA.width*f, LogoFSA.height*f);
-    f = 100/LogoAVA.height
-    image(LogoAVA, 50, 1335 - 150, LogoAVA.width*f, LogoAVA.height*f);
-    text("Acompañan:", 1080/2 + 50, 1335 - 165);
+    f = 91/LogoFSA.height
+    image(LogoFSA, 258, 1212, LogoFSA.width*f, LogoFSA.height*f);
+    f = 91/LogoAVA.height
+    image(LogoAVA, 44, 1212, LogoAVA.width*f, LogoAVA.height*f);
+    text("Acompañan:", 489, 1167+23);
 
     // logos acompañan
-    tamaño = 65
+    tamaño = 80
     f = tamaño/LogoJuanaKoslay.height
-    image(LogoJuanaKoslay, 1080/2 + tamaño-10, 1335 - 160, LogoJuanaKoslay.width*f, LogoJuanaKoslay.height*f);
+    image(LogoJuanaKoslay, 489, 1222, LogoJuanaKoslay.width*f, LogoJuanaKoslay.height*f);
     f = tamaño/LogoElVolcan.height
-    image(LogoElVolcan, 1080/2 + tamaño-10 + 150, 1335 - 160, LogoElVolcan.width*f, LogoElVolcan.height*f);
-    f = tamaño/LogoASL.height
-    image(LogoASL, 1080/2 + tamaño-10 + 150 + 150, 1335 - 160, LogoASL.width*f, LogoASL.height*f);
-
-    f = tamaño/LogoPotrero.height
-    image(LogoPotrero, 1080/2 + tamaño-10 +75, 1335 - 85, LogoPotrero.width*f, LogoPotrero.height*f);
+    image(LogoElVolcan, 604, 1222, LogoElVolcan.width*f, LogoElVolcan.height*f);
+     f = tamaño/LogoPotrero.height
+    image(LogoPotrero, 730, 1222, LogoPotrero.width*f, LogoPotrero.height*f);
     f = tamaño/LogoSanLuis.height
-    image(LogoSanLuis, 1080/2 + tamaño-10 + 150 + 75, 1335 - 85, LogoSanLuis.width*f, LogoSanLuis.height*f);
+    image(LogoSanLuis, 803, 1212, LogoSanLuis.width*f, LogoSanLuis.height*f);
     f = tamaño/LogoASL.height
-    //image(LogoASL, 1080/2 + tamaño-10 + 150 + 150, 1335 - 85, LogoASL.width*f, LogoASL.height*f);
+
+    tamaño = 70
+    f = tamaño/LogoASL.height
+    image(LogoASL, 950, 1222, LogoASL.width*f, LogoASL.height*f);
+
+       //image(LogoASL, 1080/2 + tamaño-10 + 150 + 150, 1335 - 85, LogoASL.width*f, LogoASL.height*f);
 
   pop()
 }
