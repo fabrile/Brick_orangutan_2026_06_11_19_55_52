@@ -13,6 +13,33 @@ let LogoPotrero;
 let LogoSanLuis;
 let PuntoMapa;
 
+let Data = {
+  "Actividades": [
+    "actividad 1",
+    "actividad 2",
+    "actividad 3",
+    "actividad 4"
+  ],
+  "Artistas": [
+    "Pepita Juárez",
+    "Juana de los Palotes",
+    "Carlos Gutierrez",
+    "Federico Casas",
+    "Ana Belen",
+    "Matias Herrera",
+    "Fulana Gonzales",
+    "Micaela Luna",
+    "Maria Paz",
+    "Sofia Noguera"
+  ],
+  "Dirección": [
+    "Calle Inventada 1234",
+    "San Luis Capital",
+  ],
+  "Horarios": [
+    "Sábados y Domingos de 17 a 21hs"
+  ]
+}
 
 /*
 function preload() {
@@ -81,7 +108,7 @@ function draw() {
   rect(0,1335-200,1080,200,50,50,50,50)
 
   fill(220,219,255,255)
-  rect(455,1335-200,5,200,0,0,0,00)
+  rect(455,1335-200,5,200,0,0,0,0)
   verLogos()
   
 }
@@ -166,13 +193,3 @@ function verLogos(){
   pop()
 }
 
-function e_w(logo, factor) {
-  let w = logo.width;
-  w *= factor;
-  return w; // Corregido a minúsculas
-}
-function e_h(logo, factor) {
-  let h = logo.height;
-  h *= factor;
-  return h; // Corregido a minúsculas
-}
