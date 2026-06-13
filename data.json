@@ -1,0 +1,330 @@
+{
+ "MUSHAL": {
+    "Actividades": ["Muestra de Arte / Exposición Colectiva"],
+    "Artistas": [
+      "DARIO ARISTIDES MOLINA",
+      "SANDRA FERNANDEZ",
+      "ADRIANA GONZALEZ",
+      "LEON PENNINI",
+      "FABIAN MARTIN",
+      "RAMIRO GALLARDO",
+      "GRICELDA GUERRERO",
+      "GABRIELA VARELA",
+      "MARIA MOYANO",
+      "PIPI COSMICA"
+    ],
+    "Dirección": ["San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["LISSY RODRIGUEZ VARGAS"]
+  },
+  "CENTRO CULTURAL PUENTE BLANCO": {
+    "Actividades": ["Exposición Colectiva / Complejo Cultural"],
+    "Artistas": [
+      "GRACIELA BARON",
+      "JUAN BERTIN",
+      "VIOLETA PEREZ ANZORENA",
+      "RAQUEL DAQUINO",
+      "MARIELA MASSACESE"
+    ],
+    "Dirección": ["Av. Catamarca y Pasaje de las Artes, San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["LISSY RODRIGUEZ VARGAS"]
+  },
+  "EXOTICA": {
+    "Actividades": ["Muestra en espacio gastronómico"],
+    "Artistas": ["Gomez Balmaceda Maria Nazarena", "Pascual Gentile"],
+    "Dirección": ["Peatonal San Martín, San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["M. Nazarena Gómez Balmaceda"]
+  },
+  "615 (CALLE Galería)": {
+    "Actividades": ["Galería de arte / Muestras colectivas"],
+    "Artistas": [
+      "Ramiro Gutierrez Corvalan",
+      "Maria Eugenia Bustos y Anello",
+      "Chelco Rezzano",
+      "Eugenia Paone",
+      "Juliana Pallaro",
+      "Andrea Riveros",
+      "Martín Viñals",
+      "Monica Codesido",
+      "Andres Bustos Flitt",
+      "Ariel Zavala",
+      "Matías Sosa",
+      "Gustavo Carbonari",
+      "Lucy Moyano",
+      "Juan Talia"
+    ],
+    "Dirección": ["Peatonal Rivadavia 615, San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Ramiro Gutierrez Corvalan"]
+  },
+  "SAN LUIS SHOPPING": {
+    "Actividades": ["Exposición Colectiva en Centro Comercial"],
+    "Artistas": [
+      "EFER AGUILAR",
+      "TERE LORENZONI",
+      "MIRTA RUTA VARGAS",
+      "LUPE RICO",
+      "ANALIA OLEA"
+    ],
+    "Dirección": ["Av. Labrador y Ruta 20, San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["ALEJANDRA NARDA"]
+  },
+  "REFLEJOS ARTE": {
+    "Actividades": ["Escuela de Arte / Formato Pequeño"],
+    "Artistas": ["Gisela Gomez"],
+    "Dirección": ["San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Gisela Gomez"]
+  },
+  "PIQUI CERAMICA Y MOSAIQUISMO": {
+    "Actividades": ["Espacio de taller y muestra"],
+    "Artistas": ["Jorgelina Piquilloud"],
+    "Dirección": ["9 de Julio 854, San Luis Capital"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Jorgelina Piquilloud"]
+  },
+  "Centro Cultural Municipalidad de El Volcán": {
+    "Actividades": ["Espacio Cultural / Exposición Colectiva"],
+    "Artistas": [
+      "Paola Bustos",
+      "Liliana Coria",
+      "Andrea Puig del Villar",
+      "Graciela Boni"
+    ],
+    "Dirección": ["Av Pringles 1850 (al lado del Salto Colorado), El Volcán"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Graciela Boni"]
+  },
+  "Doña Lucha (Los Molles)": {
+    "Actividades": ["Taller / Espacio Abierto"],
+    "Artistas": ["Cecilia Bon"],
+    "Dirección": ["Av San Martín y Pringles, Los Molles"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Cecilia Bon"]
+  },
+  "De Arcilla Taller (Los Molles)": {
+    "Actividades": ["Taller de cerámica"],
+    "Artistas": ["Flor Fernández"],
+    "Dirección": ["La Carretilla s/n, Los Molles"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Flor Fernández"]
+  },
+  "Nueve Musas. Galería de arte (Merlo)": {
+    "Actividades": ["Galería de arte / Muestra"],
+    "Artistas": ["Bernabela Mujica Lainez", "Gabriel Landoni"],
+    "Dirección": ["16 de julio 280, Merlo"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Bernabela Mujica Lainez"]
+  },
+  "La Parra (Merlo)": {
+    "Actividades": ["Espacio Cultural"],
+    "Artistas": ["Andrea Benítez (Prensa y Mate)"],
+    "Dirección": ["Mogote Bayo N° 146, Merlo"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Andrea Benítez"]
+  },
+  "Pucuy arte en Barro (Merlo)": {
+    "Actividades": ["Taller de cerámica / Barro"],
+    "Artistas": ["Fabiana Sanza"],
+    "Dirección": ["Barrio Piedra Blanca, Villa de Merlo"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Fabiana Sanza"]
+  },
+  "Galería Punto de Encuentro (Merlo)": {
+    "Actividades": ["Galería / Muestra"],
+    "Artistas": ["Fernando Sotera"],
+    "Dirección": ["Presb. Becerra s/n, Villa de Merlo"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Fernando Sotera"]
+  },
+  "Taller Viviana Palestini (Juana Koslay)": {
+    "Actividades": ["Taller de arte"],
+    "Artistas": ["Viviana Palestini"],
+    "Dirección": ["Los Carolinos 500, Juana Koslay"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Viviana Palestini"]
+  },
+  "Club de Contadores Juana Koslay": {
+    "Actividades": ["Exposición / Encuentro"],
+    "Artistas": ["Club de Contadores Artistas"],
+    "Dirección": ["Av. Los Chañares, Juana Koslay"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Responsable de Comisión de Cultura"]
+  },
+  "Espacio.s (Cortaderas)": {
+    "Actividades": ["Taller / Muestra"],
+    "Artistas": ["Luis Saez"],
+    "Dirección": ["Arroyo Benítez 303, Cortaderas"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Luis Saez"]
+  },
+  "Taller de Susana (Cortaderas)": {
+    "Actividades": ["Taller / Encuentro Colectivo"],
+    "Artistas": ["Susana Pedernera", "Grupo Enlazando miradas e invitados"],
+    "Dirección": ["Zona rural, Cortaderas"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Susana Pedernera"]
+  },
+  "Centro Cultural Cortaderas": {
+    "Actividades": ["Centro Cultural / Muestra Local"],
+    "Artistas": ["Secretaria de Cultura de Cortaderas"],
+    "Dirección": ["Cortaderas"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Área de Cultura Cortaderas"]
+  },
+  "Espacio Potrero - Daniel (Potrero de los Funes)": {
+    "Actividades": ["Exposición Colectiva"],
+    "Artistas": ["Daniel Mastandrea", "Daniel Juan", "Susana Perrone", "Nico Varvara"],
+    "Dirección": ["Circuito del Lago, Potrero de los Funes"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Daniel Mastandrea"]
+  },
+  "Galería de Arte Potrero de los Funes": {
+    "Actividades": ["Muestra de artistas e invitados"],
+    "Artistas": [
+      "Pueyo Domínguez Mario Alejandro",
+      "Rubén Menas",
+      "Juan Longhini",
+      "Yoyo Feliz",
+      "Carlos Marini",
+      "Indio Cazola",
+      "Laura Jancovich"
+    ],
+    "Dirección": ["Potrero de los Funes"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Mario Alejandro Pueyo Domínguez"]
+  },
+  "Atelier Ronda Baez (Estancia Grande)": {
+    "Actividades": ["Atelier / Taller"],
+    "Artistas": ["Ronda Baez"],
+    "Dirección": ["Ruta 18 s/n, Estancia Grande"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Ronda Baez"]
+  },
+  "Paseo Artesanal Martín Grillo (El Trapiche)": {
+    "Actividades": ["Paseo Artesanal y Muestra"],
+    "Artistas": ["Paseo artesanal martin grillo"],
+    "Dirección": ["San Martín y Pringles, El Trapiche"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Martín Grillo"]
+  },
+  "Avalon (San Francisco)": {
+    "Actividades": ["Taller / Espacio Creativo"],
+    "Artistas": ["Claudia Radio"],
+    "Dirección": ["Calle Volpe s/n, Camino a Punta del Agua, San Francisco"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Claudia Radio"]
+  },
+  "Biblioteca Popular Juan de Dios Escobar (San Francisco)": {
+    "Actividades": ["Biblioteca / Espacio Cultural"],
+    "Artistas": ["Alejandra Marcela Viegas"],
+    "Dirección": ["Calle Belgrano s/n, San Francisco"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Alejandra Marcela Viegas"]
+  },
+  "El Quebracho de los Novios (San Francisco)": {
+    "Actividades": ["Taller / Muestra"],
+    "Artistas": ["Patricia Fitti"],
+    "Dirección": ["Ex Ruta 146 s/n, Pozo del Molle, San Francisco"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Patricia Fitti"]
+  },
+  "Artemisia Espacio de Arte (San Francisco)": {
+    "Actividades": ["Espacio de Arte"],
+    "Artistas": ["Silvia Cecilia Escudero"],
+    "Dirección": ["San Francisco del Monte de Oro"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Silvia Cecilia Escudero"]
+  },
+  "Rayen Espacio Creativo (San Francisco)": {
+    "Actividades": ["Espacio Creativo"],
+    "Artistas": ["Ramón Alberto Piño"],
+    "Dirección": ["San Francisco del Monte de Oro"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Ramón Alberto Piño"]
+  },
+  "La tiendita de Alquimia Arte (San Francisco)": {
+    "Actividades": ["Tienda de arte / Taller"],
+    "Artistas": ["Gabriela Alejandra Giudici"],
+    "Dirección": ["San Francisco del Monte de Oro"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Gabriela Alejandra Giudici"]
+  },
+  "Centro Cultural Diffalci (La Toma)": {
+    "Actividades": ["Centro Cultural / Muestras Múltiples"],
+    "Artistas": [
+      "Ana Isabel Diffalci",
+      "María José de la Torre",
+      "Nelly Nicola",
+      "Carla Garro",
+      "Valentina Pucacco",
+      "Sofia Allende",
+      "Guillermina Balestro",
+      "Cielo Garcés",
+      "Graciela Assat",
+      "Brisa Correa Villegas",
+      "Rocio Miraglio",
+      "Renée Contreras",
+      "Natalia Seva",
+      "Lyda Lucero Flores",
+      "Carmen Arias",
+      "Carmen Sayago",
+      "Kimy Muñoz"
+    ],
+    "Dirección": ["25 de Mayo 399 esquina Lafinur, La Toma"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Ana Isabel Diffalci"]
+  },
+  "Escuela Veneciana de Arte (Villa Mercedes)": {
+    "Actividades": ["Escuela de arte / Taller Abierto"],
+    "Artistas": ["Stefano De Battista"],
+    "Dirección": ["Pueyrredón 264, Villa Mercedes"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Stefano De Battista"]
+  },
+  "Espacio de arte Carola (Villa Mercedes)": {
+    "Actividades": ["Pintura, cerámica y tejidos"],
+    "Artistas": ["Carola Ruiz Encinas", "Tere Encinas", "Marina Sánchez"],
+    "Dirección": ["Pueyrredón 1096, Villa Mercedes"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Carola Ruiz Encinas"]
+  },
+  "Taller de arte Anele Giacometti (Villa Mercedes)": {
+    "Actividades": ["Muestra de taller infantil y esgrafiado"],
+    "Artistas": ["Ana Elena Giacometti", "Alumnos del taller"],
+    "Dirección": ["Casa de la Música, Villa Mercedes"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Ana Elena Giacometti"]
+  },
+  "Baroja - Galería de Exposición y Ventas (Quines)": {
+    "Actividades": ["Galería de Exposición y ventas"],
+    "Artistas": ["Roberto Agüero \"Baroja\""],
+    "Dirección": ["25 de Mayo y San José, Quines"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Roberto Agüero"]
+  },
+  "Reflejos Arte Santa Rosa": {
+    "Actividades": ["Muestra formatos medianos y pequeños"],
+    "Artistas": ["Gómez Macarena"],
+    "Dirección": ["Santa Rosa de Conlara"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Macarena Gómez"]
+  },
+  "Museo y Centro Cultural de Carpintería": {
+    "Actividades": ["Museo / Centro Cultural - Muestra Colectiva"],
+    "Artistas": ["Miriam Avila", "Lorena Salazar"],
+    "Dirección": ["Carpintería"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Dirección de Cultura de Carpintería"]
+  },
+  "# (La Punta)": {
+    "Actividades": ["Taller / Espacio Abierto"],
+    "Artistas": ["Ramiro Gallardo Iway"],
+    "Dirección": ["B° Aires de San Benito, La Punta"],
+    "Horarios": ["Abierto al público"],
+    "Coordinador": ["Ramiro Gallardo Iway"]
+  }
+}

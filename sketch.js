@@ -13,12 +13,16 @@ let LogoPotrero;
 let LogoSanLuis;
 let PuntoMapa;
 let LogoTaller = null;
+let EspaciosData = {};
 
 let artistasv =  460
 let horariosv =  1000
 let direccionh = 950
+let Data = {};
 
+/*
 let Data = {
+  "NombreEspacio": "Generico",
   "Actividades": [
     "actividad 1",
     "actividad 2",
@@ -46,12 +50,24 @@ let Data = {
     "Abierto al público"
   ]
 }
-
+*/
 async function setup() {
   createCanvas(1080, 1335);
    
-  // 1. Esperamos (await) a que la fuente se cargue por completo antes de seguir
   try {
+    // Cargar base de datos de los espacios
+    const resData = await fetch('data.json');
+    EspaciosData = await resData.json();
+    
+    // Inicializar con los datos de "Generico" o el primer espacio de la lista
+    if (EspaciosData) {
+      let keys = Object.keys(EspaciosData);
+      if (keys.length > 0) {
+        let firstKey = EspaciosData.Generico ? "Generico" : keys[0];
+        Data = EspaciosData[firstKey];
+        Data.NombreEspacio = firstKey;
+      }
+    }
     [
       robotoFlex,
       Fondo,
@@ -182,6 +198,31 @@ function mostrarTexto(){
 
     //Titulos
     textAlign(LEFT)
+
+    // Nombre del Espacio arriba de ARTISTAS
+    let nombre = Data.NombreEspacio || "Generico";
+    push();
+    fill(148, 90, 12, 255);
+    textFont(robotoFlex, {
+      fontVariationSettings: `'wght' ${800}, 'wdth' ${100}`
+    });
+    textSize(22);
+    text(nombre.toUpperCase(), 610, artistasv - 110, 420, 75);
+    pop();
+
+    // Coordinador arriba de ARTISTAS
+    let coordinador = (Data.Coordinador || []).join(', ');
+    if (coordinador) {
+      push();
+      fill(100, 100, 100, 255);
+      textFont(robotoFlex, {
+        fontVariationSettings: `'wght' ${600}, 'wdth' ${100}`
+      });
+      textSize(18);
+      text("Coordina: " + coordinador, 610, artistasv - 50);
+      pop();
+    }
+
     textSize(24)
     textFont(robotoFlex, {
     fontVariationSettings: `'wght' ${700}, 'wdth' ${110}`});
@@ -240,6 +281,101 @@ function mostrarMenuCarga() {
   title.innerText = 'Crear Imagen para Recorrido';
   sidebar.appendChild(title);
 
+  // Selector de Espacios (Dropdown)
+  let grupoSeleccion = document.createElement('div');
+  grupoSeleccion.className = 'form-group';
+  
+  let labelSeleccion = document.createElement('label');
+  labelSeleccion.innerText = 'Seleccionar Espacio';
+  labelSeleccion.setAttribute('for', 'select-espacio');
+  grupoSeleccion.appendChild(labelSeleccion);
+  
+  let select = document.createElement('select');
+  select.id = 'select-espacio';
+  select.style.padding = '10px';
+  select.style.border = '1px solid #dcdcdc';
+  select.style.borderRadius = '6px';
+  select.style.fontSize = '0.95rem';
+  select.style.backgroundColor = '#ffffff';
+  select.style.fontFamily = 'inherit';
+  select.style.cursor = 'pointer';
+  select.style.width = '100%';
+  
+  // Agregar opciones
+  for (let key in EspaciosData) {
+    if (EspaciosData.hasOwnProperty(key)) {
+      let option = document.createElement('option');
+      option.value = key;
+      option.innerText = key;
+      select.appendChild(option);
+    }
+  }
+  
+  // Cambiar valores del formulario y actualizar el canvas al seleccionar un espacio
+  select.onchange = function() {
+    let espacioSeleccionado = EspaciosData[select.value];
+    if (espacioSeleccionado) {
+      document.getElementById('input-nombre-espacio').value = select.value;
+      document.getElementById('input-coordinador').value = (espacioSeleccionado.Coordinador || []).join(', ');
+      document.getElementById('input-actividades').value = (espacioSeleccionado.Actividades || []).join('\n');
+      document.getElementById('input-artistas').value = (espacioSeleccionado.Artistas || []).join('\n');
+      document.getElementById('input-horarios').value = (espacioSeleccionado.Horarios || espacioSeleccionado.Horario || []).join('\n');
+      document.getElementById('input-direccion').value = (espacioSeleccionado.Dirección || espacioSeleccionado.Direccion || []).join('\n');
+      
+      // Actualizar objeto global Data
+      Data.NombreEspacio = select.value;
+      Data.Coordinador = espacioSeleccionado.Coordinador || [];
+      Data.Actividades = (espacioSeleccionado.Actividades || []).map(s => s.trim()).filter(s => s !== '');
+      Data.Artistas = (espacioSeleccionado.Artistas || []).map(s => s.trim()).filter(s => s !== '');
+      
+      let hrs = espacioSeleccionado.Horarios || espacioSeleccionado.Horario || [];
+      if (Data.Horarios) Data.Horarios = hrs;
+      if (Data.Horario) Data.Horario = hrs;
+      
+      let dirs = espacioSeleccionado.Dirección || espacioSeleccionado.Direccion || [];
+      if (Data.Dirección) Data.Dirección = dirs;
+      if (Data.Direccion) Data.Direccion = dirs;
+      
+      redraw();
+    }
+  };
+  
+  grupoSeleccion.appendChild(select);
+  sidebar.appendChild(grupoSeleccion);
+
+  // Función auxiliar para crear grupos de inputs de texto de una línea
+  function crearGrupoInputText(labelTexto, id, valorInicial) {
+    let grupo = document.createElement('div');
+    grupo.className = 'form-group';
+    
+    let label = document.createElement('label');
+    label.innerText = labelTexto;
+    label.setAttribute('for', id);
+    grupo.appendChild(label);
+    
+    let input = document.createElement('input');
+    input.type = 'text';
+    input.id = id;
+    input.value = valorInicial;
+    input.style.padding = '10px';
+    input.style.border = '1px solid #dcdcdc';
+    input.style.borderRadius = '6px';
+    input.style.fontSize = '0.95rem';
+    input.style.fontFamily = 'inherit';
+    input.style.backgroundColor = '#fafafa';
+    input.onfocus = function() {
+      input.style.backgroundColor = '#ffffff';
+      input.style.borderColor = '#945a0c';
+    };
+    input.onblur = function() {
+      input.style.backgroundColor = '#fafafa';
+      input.style.borderColor = '#dcdcdc';
+    };
+    grupo.appendChild(input);
+    
+    return grupo;
+  }
+
   // Función auxiliar para crear grupos de campos de entrada
   function crearGrupoTextarea(labelTexto, id, valorInicial) {
     let grupo = document.createElement('div');
@@ -296,6 +432,15 @@ function mostrarMenuCarga() {
     return grupo;
   }
 
+  // Nombre del Espacio
+  let grupoNombre = crearGrupoInputText('Nombre del Espacio', 'input-nombre-espacio', Data.NombreEspacio || '');
+  sidebar.appendChild(grupoNombre);
+
+  // Coordinador
+  let coorValor = (Data.Coordinador || []).join(', ');
+  let grupoCoordinador = crearGrupoInputText('Coordinador', 'input-coordinador', coorValor);
+  sidebar.appendChild(grupoCoordinador);
+
   // Actividades
   let actValor = Data.Actividades ? Data.Actividades.join('\n') : '';
   let grupoActividades = crearGrupoTextarea('Actividades (coloque una por línea)', 'input-actividades', actValor);
@@ -326,6 +471,8 @@ function mostrarMenuCarga() {
   boton.innerText = 'Generar Cartel';
   boton.onclick = function() {
     // Actualizar objeto Data
+    Data.NombreEspacio = document.getElementById('input-nombre-espacio').value.trim();
+    Data.Coordinador = document.getElementById('input-coordinador').value.split(',').map(s => s.trim()).filter(s => s !== '');
     Data.Actividades = document.getElementById('input-actividades').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     Data.Artistas = document.getElementById('input-artistas').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     
