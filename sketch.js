@@ -13,6 +13,10 @@ let LogoPotrero;
 let LogoSanLuis;
 let PuntoMapa;
 
+let artistasv =  460
+let horariosv =  1000
+let direccionh = 950
+
 let Data = {
   "Actividades": [
     "actividad 1",
@@ -37,7 +41,8 @@ let Data = {
     "San Luis Capital",
   ],
   "Horarios": [
-    "Sábados y Domingos de 17 a 21hs"
+    "Sábados y Domingos de 17 a 21hs",   
+    "Abierto al público"
   ]
 }
 
@@ -104,20 +109,24 @@ function draw() {
   // background(220);
   image(Fondo, 0, 0, 1080, 1335);
   noStroke()
-  fill(148, 90, 12, 255)
-  rect(0,1335-200,1080,200,50,50,50,50)
 
-  fill(220,219,255,255)
-  rect(455,1335-200,5,200,0,0,0,0)
-  verLogos()
+  mostrarLogos()
+  mostrarTexto()
+
   
 }
 
 
 // Dibuja el SVG indicando la variable, posición x, y, ancho y alto
 
-function verLogos(){
+function mostrarLogos(){
   push()
+
+    // Pie de página
+    fill(148, 90, 12, 255)
+    rect(0,1335-200,1080,200,50,50,50,50)
+    fill(220,219,255,255)
+    rect(455,1335-200,5,200,0,0,0,0)
 
     // Logo Recorrido
     f= 334/Recorrido.height
@@ -128,38 +137,10 @@ function verLogos(){
     image(Recorrido, 924, 143, Recorrido.width*f, Recorrido.height*f);
     tint(255)
     
-
-
-    
-    textAlign(CENTER);
-    textSize(20);
-    fill(20,20,20)
-    //textStyle(BOLD);
-    textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${800}, 'wdth' ${85}`});
-    text("DECLARADO DE INTERÉS", 350, 170);
-    textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${800}, 'wdth' ${110}`});
-    text("CULTURAL Y TURÍSTICO", 350, 195);
-    textSize(35);
-    textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${600}, 'wdth' ${110}`});
-    text("4 y 5 de JULIO", 350, 380);
-
     //  Mapa
     f= 100/PuntoMapa.height
     image(PuntoMapa, 580, 950, PuntoMapa.width*f, PuntoMapa.height*f);
     
-
-    //Actividades
-    textAlign(LEFT)
-    textSize(24)
-    textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${700}, 'wdth' ${110}`});
-    text("ACTIVIDADES", 50, 450);
-    text("ARTISTAS", 610, 450);
-    text("HORARIOS", 50, 950);
-
 
     // texto y logos organizan
     fill(255,255,255,255);
@@ -191,5 +172,72 @@ function verLogos(){
        //image(LogoASL, 1080/2 + tamaño-10 + 150 + 150, 1335 - 85, LogoASL.width*f, LogoASL.height*f);
 
   pop()
+}
+
+function mostrarTexto(){
+
+    // texto de los logos de arriba
+    textSize(20);
+    fill(0,0,0,255)
+    textAlign(CENTER)
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${800}, 'wdth' ${85}`});
+    text("DECLARADO DE INTERÉS", 350, 170);
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${800}, 'wdth' ${110}`});
+    text("CULTURAL Y TURÍSTICO", 350, 195);
+    textSize(35);
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${600}, 'wdth' ${110}`});
+    text("4 y 5 de JULIO", 350, 380);
+
+    //Titulos
+    textAlign(LEFT)
+    textSize(24)
+    textFont(robotoFlex, {
+    fontVariationSettings: `'wght' ${700}, 'wdth' ${110}`});
+    text("ACTIVIDADES:", 50, artistasv);
+    text("ARTISTAS", 610, artistasv);
+    text("HORARIOS", 50, horariosv);
+
+    // Listas con letra liviana
+    fill(20, 20, 20);
+    textSize(23);
+    textFont(robotoFlex, {
+      fontVariationSettings: `'wght' ${500}, 'wdth' ${100}`
+    });
+
+    // Lista de Actividades
+    if (Data.Actividades) {
+      for (let i = 0; i < Data.Actividades.length; i++) {
+        text(Data.Actividades[i], 50, artistasv + 40 + i * 32);
+      }
+    }
+
+    // Lista de Artistas
+    if (Data.Artistas) {
+      for (let i = 0; i < Data.Artistas.length; i++) {
+        text(Data.Artistas[i], 610, artistasv + 40 + i * 32);
+      }
+    }
+
+    // Lista de Horarios (acepta 'Horario' o 'Horarios')
+    let horarios = Data.Horario || Data.Horarios;
+    if (horarios) {
+      for (let i = 0; i < horarios.length; i++) {
+        text(horarios[i], 50, horariosv + i * 32 + 32);
+      }
+    }
+
+    // Dirección (al lado del Punto de Mapa)
+    let direccion = Data.Dirección || Data.Direccion;
+    if (direccion) {
+      for (let i = 0; i < direccion.length; i++) {
+        text(direccion[i], 680, 990 + i * 32);
+      }
+    }
+
+
+
 }
 
