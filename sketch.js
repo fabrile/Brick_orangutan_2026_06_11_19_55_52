@@ -244,11 +244,30 @@ function mostrarTexto(){
       }
     }
 
-    // Lista de Artistas
+    // Lista de Artistas (con soporte para dos columnas si superan los 15 artistas)
     if (Data.Artistas) {
-      for (let i = 0; i < Data.Artistas.length; i++) {
-        text(Data.Artistas[i], 610, artistasv + 40 + i * 32);
+      let limit = 15;
+      let col2X = 840;
+      
+      push();
+      if (Data.Artistas.length > limit) {
+        // Reducimos un poco el tamaño de letra y la separación si hay muchos artistas para evitar desborde
+        textSize(19);
+        let spacing = 28;
+        for (let i = 0; i < Data.Artistas.length; i++) {
+          if (i < limit) {
+            text(Data.Artistas[i], 610, artistasv + 40 + i * spacing);
+          } else {
+            text(Data.Artistas[i], col2X, artistasv + 40 + (i - limit) * spacing);
+          }
+        }
+      } else {
+        // Renderizado normal de una sola columna
+        for (let i = 0; i < Data.Artistas.length; i++) {
+          text(Data.Artistas[i], 610, artistasv + 40 + i * 32);
+        }
       }
+      pop();
     }
 
     // Lista de Horarios (acepta 'Horario' o 'Horarios')

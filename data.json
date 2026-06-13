@@ -59,9 +59,10 @@
     "Horarios": ["Abierto al público"],
     "Coordinador": ["Ramiro Gutierrez Corvalan"]
   },
-  "SAN LUIS SHOPPING": {
+"SAN LUIS SHOPPING": {
     "Actividades": ["Exposición Colectiva en Centro Comercial"],
     "Artistas": [
+      "ALEJANDRA NARDA",
       "EFER AGUILAR",
       "TERE LORENZONI",
       "MIRTA RUTA VARGAS",
@@ -147,12 +148,37 @@
     "Horarios": ["Abierto al público"],
     "Coordinador": ["Viviana Palestini"]
   },
-  "Club de Contadores Juana Koslay": {
-    "Actividades": ["Exposición / Encuentro"],
-    "Artistas": ["Club de Contadores Artistas"],
-    "Dirección": ["Av. Los Chañares, Juana Koslay"],
+"CLUB DE CONTADORES": {
+    "Actividades": ["Muestra Colectiva"],
+    "Artistas": [
+      "VIRGINIA MUNDET",
+      "GRACIELA CUSSATI",
+      "FEDERICO ESTRADA",
+      "YOLANDA LUCERO",
+      "MERCEDES ARROYO",
+      "LA MADRE DEL BORREGO",
+      "ALBA CAMARGO",
+      "CARLOS MASCIONI",
+      "SANDRA APARICIO",
+      "FLAVIA DAVOLI",
+      "ADRIANA TOLEDO PEDROZA",
+      "JESSICA AUDICIO",
+      "MARIELA COGNINI",
+      "PALOMA OJEDA",
+      "MALENA MASSARO",
+      "ALEJANDRA BAUDINO",
+      "GABRIEL MARQUEZ",
+      "AYELEN CALDERON",
+      "BAUGART",
+      "LAURA HILDA MARTINEZ",
+      "GRUPO DE ESTUDIOS DR LEANDRO DESPOUY",
+      "PABLO BRITOS",
+      "CARINA LEVIN",
+      "CHELO ES ARTE"
+    ],
+    "Dirección": ["Av. Los Chañares - Juana Koslay"],
     "Horarios": ["Abierto al público"],
-    "Coordinador": ["Responsable de Comisión de Cultura"]
+    "Coordinador": ["PACHI REYNARES"]
   },
   "Espacio.s (Cortaderas)": {
     "Actividades": ["Taller / Muestra"],
