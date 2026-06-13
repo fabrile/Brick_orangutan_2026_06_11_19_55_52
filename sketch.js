@@ -229,7 +229,7 @@ function mostrarMenuCarga() {
 
   // Título del formulario
   let title = document.createElement('h2');
-  title.innerText = 'Modificar Datos';
+  title.innerText = 'Crear Imagen para Recorrido';
   sidebar.appendChild(title);
 
   // Función auxiliar para crear grupos de campos de entrada
@@ -252,7 +252,7 @@ function mostrarMenuCarga() {
 
   // Actividades
   let actValor = Data.Actividades ? Data.Actividades.join('\n') : '';
-  let grupoActividades = crearGrupoTextarea('Actividades (una por línea)', 'input-actividades', actValor);
+  let grupoActividades = crearGrupoTextarea('Actividades (coloque una por línea)', 'input-actividades', actValor);
   sidebar.appendChild(grupoActividades);
 
   // Artistas
