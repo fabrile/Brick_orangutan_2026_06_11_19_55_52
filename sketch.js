@@ -15,6 +15,8 @@ let PuntoMapa;
 let GuardaInferior;
 let LogoTaller = null;
 let EspaciosData = {};
+let modoPestana = 'espacio'; // 'espacio' o 'imagen'
+let ImagenEspacio = null;
 
 let artistasv =  460
 let horariosv =  1000
@@ -221,8 +223,26 @@ function mostrarLogos(){
 
     // Logo Taller al lado si existe
     if (LogoTaller) {
-      let fTaller = 300 / LogoTaller.height;
-      image(LogoTaller, 1080*3/4 - LogoTaller.width*fTaller/2, 33 + (334 - 300) / 2, LogoTaller.width * fTaller, 300);
+        //let fTaller = 300 / LogoTaller.height;
+        //image(LogoTaller, 1080*3/4 - LogoTaller.width*fTaller/2, 33 + (334 - 300) / 2, LogoTaller.width * fTaller, 300);
+        let maxW = 370;
+        let maxH = 230;
+        let imgRatio = LogoTaller.width / LogoTaller.height;
+        let boxRatio = maxW / maxH;
+        let drawW, drawH;
+        if (imgRatio > boxRatio) {
+          drawW = maxW;
+          drawH = maxW / imgRatio;
+        } else {
+          drawH = maxH;
+          drawW = maxH * imgRatio;
+        }
+        // Centrar en el rectangulo (120,416) a (960,866)
+        let drawX = 603 + (maxW - drawW) / 2;
+        let drawY = 120 + (maxH - drawH) / 2;
+        image(LogoTaller, drawX, drawY, drawW, drawH);
+      
+
     }
 
     f= 1000/Recorrido.height
@@ -381,8 +401,10 @@ function mostrarTexto(){
     textSize(24)
     textFont(robotoFlex, {
     fontVariationSettings: `'wght' ${700}, 'wdth' ${110}`});
-    text("ACTIVIDADES:", 50, artistasv);
-    text("ARTISTAS", 610, artistasv);
+    if (modoPestana !== 'imagen') {
+      text("ACTIVIDADES:", 50, artistasv);
+      text("ARTISTAS", 610, artistasv);
+    }
     text("HORARIOS", 50, horariosv);
 
     // Listas con letra liviana
@@ -392,37 +414,59 @@ function mostrarTexto(){
       fontVariationSettings: `'wght' ${500}, 'wdth' ${100}`
     });
 
-    // Lista de Actividades
-    if (Data.Actividades) {
-      for (let i = 0; i < Data.Actividades.length; i++) {
-        text(Data.Actividades[i], 50, artistasv + 40 + i * 32);
+    if (modoPestana !== 'imagen') {
+      // Lista de Actividades
+      if (Data.Actividades) {
+        for (let i = 0; i < Data.Actividades.length; i++) {
+          text(Data.Actividades[i], 50, artistasv + 40 + i * 32);
+        }
       }
-    }
 
-    // Lista de Artistas (con soporte para dos columnas si superan los 15 artistas)
-    if (Data.Artistas) {
-      let limit = 15;
-      let col2X = 840;
-      
-      push();
-      if (Data.Artistas.length > limit) {
-        // Reducimos un poco el tamaño de letra y la separación si hay muchos artistas para evitar desborde
-        textSize(19);
-        let spacing = 28;
-        for (let i = 0; i < Data.Artistas.length; i++) {
-          if (i < limit) {
-            text(Data.Artistas[i], 610, artistasv + 40 + i * spacing);
-          } else {
-            text(Data.Artistas[i], col2X, artistasv + 40 + (i - limit) * spacing);
+      // Lista de Artistas (con soporte para dos columnas si superan los 15 artistas)
+      if (Data.Artistas) {
+        let limit = 15;
+        let col2X = 840;
+        
+        push();
+        if (Data.Artistas.length > limit) {
+          // Reducimos un poco el tamaño de letra y la separación si hay muchos artistas para evitar desborde
+          textSize(19);
+          let spacing = 28;
+          for (let i = 0; i < Data.Artistas.length; i++) {
+            if (i < limit) {
+              text(Data.Artistas[i], 610, artistasv + 40 + i * spacing);
+            } else {
+              text(Data.Artistas[i], col2X, artistasv + 40 + (i - limit) * spacing);
+            }
+          }
+        } else {
+          // Renderizado normal de una sola columna
+          for (let i = 0; i < Data.Artistas.length; i++) {
+            text(Data.Artistas[i], 610, artistasv + 40 + i * 32);
           }
         }
-      } else {
-        // Renderizado normal de una sola columna
-        for (let i = 0; i < Data.Artistas.length; i++) {
-          text(Data.Artistas[i], 610, artistasv + 40 + i * 32);
-        }
+        pop();
       }
-      pop();
+    } else {
+      // Mostrar la imagen del espacio/taller cargada
+      if (ImagenEspacio) {
+        let maxW = 840;
+        let maxH = 450;
+        let imgRatio = ImagenEspacio.width / ImagenEspacio.height;
+        let boxRatio = maxW / maxH;
+        let drawW, drawH;
+        if (imgRatio > boxRatio) {
+          drawW = maxW;
+          drawH = maxW / imgRatio;
+        } else {
+          drawH = maxH;
+          drawW = maxH * imgRatio;
+        }
+        // Centrar en el rectangulo (120,416) a (960,866)
+        let drawX = 120 + (maxW - drawW) / 2;
+        let drawY = 416 + (maxH - drawH) / 2;
+        image(ImagenEspacio, drawX, drawY, drawW, drawH);
+      }
     }
 
     // Lista de Horarios (acepta 'Horario' o 'Horarios')
@@ -454,6 +498,22 @@ function mostrarMenuCarga() {
   let title = document.createElement('h2');
   title.innerText = 'Crear Imagen para Recorrido';
   sidebar.appendChild(title);
+
+  // Pestañas del menú lateral
+  let tabsContainer = document.createElement('div');
+  tabsContainer.className = 'tabs-container';
+
+  let btnTabEspacio = document.createElement('button');
+  btnTabEspacio.className = modoPestana === 'espacio' ? 'tab-btn active' : 'tab-btn';
+  btnTabEspacio.innerText = 'Espacio / Taller';
+
+  let btnTabImagen = document.createElement('button');
+  btnTabImagen.className = modoPestana === 'imagen' ? 'tab-btn active' : 'tab-btn';
+  btnTabImagen.innerText = 'Imagen del Espacio';
+
+  tabsContainer.appendChild(btnTabEspacio);
+  tabsContainer.appendChild(btnTabImagen);
+  sidebar.appendChild(tabsContainer);
 
   // Selector de Espacios (Dropdown)
   let grupoSeleccion = document.createElement('div');
@@ -518,6 +578,7 @@ function mostrarMenuCarga() {
   sidebar.appendChild(grupoSeleccion);
 
   // Función auxiliar para crear grupos de inputs de texto de una línea
+  // Función auxiliar para crear grupos de inputs de texto de una línea
   function crearGrupoInputText(labelTexto, id, valorInicial) {
     let grupo = document.createElement('div');
     grupo.className = 'form-group';
@@ -569,7 +630,7 @@ function mostrarMenuCarga() {
   }
 
   // Función auxiliar para crear campos de subida de archivo
-  function crearGrupoArchivo(labelTexto, id) {
+  function crearGrupoArchivo(labelTexto, id, callback) {
     let grupo = document.createElement('div');
     grupo.className = 'form-group';
     
@@ -594,7 +655,9 @@ function mostrarMenuCarga() {
         let reader = new FileReader();
         reader.onload = function(event) {
           loadImage(event.target.result, function(img) {
-            LogoTaller = img;
+            if (callback) {
+              callback(img);
+            }
             redraw();
           });
         };
@@ -610,7 +673,7 @@ function mostrarMenuCarga() {
   let grupoNombre = crearGrupoInputText('Nombre del Espacio', 'input-nombre-espacio', Data.NombreEspacio || '');
   sidebar.appendChild(grupoNombre);
 
-  //Referente
+  // Referente
   let coorValor = (Data.Referente || []).join(', ');
   let grupReferente = crearGrupoInputText('Referente', 'inputReferente', coorValor);
   sidebar.appendChild(grupReferente);
@@ -636,8 +699,42 @@ function mostrarMenuCarga() {
   sidebar.appendChild(grupoDireccion);
 
   // Subir Logo Taller
-  let grupoLogo = crearGrupoArchivo('Subir Logo Taller (Imagen)', 'input-logo-taller');
+  let grupoLogo = crearGrupoArchivo('Subir Logo Taller (Imagen)', 'input-logo-taller', function(img) {
+    LogoTaller = img;
+  });
   sidebar.appendChild(grupoLogo);
+
+  // Subir Imagen del Espacio
+  let grupoImagenEspacio = crearGrupoArchivo('Subir Imagen del Espacio (Imagen)', 'input-imagen-espacio', function(img) {
+    ImagenEspacio = img;
+  });
+  sidebar.appendChild(grupoImagenEspacio);
+
+  // Controlar visualización inicial según el modoPestana activo
+  function updateTabsVisibility(tabName) {
+    modoPestana = tabName;
+    if (tabName === 'espacio') {
+      btnTabEspacio.className = 'tab-btn active';
+      btnTabImagen.className = 'tab-btn';
+      grupoActividades.style.display = 'flex';
+      grupoArtistas.style.display = 'flex';
+      grupoImagenEspacio.style.display = 'none';
+    } else {
+      btnTabEspacio.className = 'tab-btn';
+      btnTabImagen.className = 'tab-btn active';
+      grupoActividades.style.display = 'none';
+      grupoArtistas.style.display = 'none';
+      grupoImagenEspacio.style.display = 'flex';
+    }
+    redraw();
+  }
+
+  // Configurar eventos click para las pestañas
+  btnTabEspacio.onclick = function() { updateTabsVisibility('espacio'); };
+  btnTabImagen.onclick = function() { updateTabsVisibility('imagen'); };
+
+  // Ejecutar visibilidad inicial
+  updateTabsVisibility(modoPestana);
 
   // Botón para regenerar cartel
   let boton = document.createElement('button');
@@ -647,8 +744,15 @@ function mostrarMenuCarga() {
     // Actualizar objeto Data
     Data.NombreEspacio = document.getElementById('input-nombre-espacio').value.trim();
     Data.Referente = document.getElementById('inputReferente').value.split(',').map(s => s.trim()).filter(s => s !== '');
-    Data.Actividades = document.getElementById('input-actividades').value.split('\n').map(s => s.trim()).filter(s => s !== '');
-    Data.Artistas = document.getElementById('input-artistas').value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    
+    let inputAct = document.getElementById('input-actividades');
+    if (inputAct) {
+      Data.Actividades = inputAct.value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    }
+    let inputArt = document.getElementById('input-artistas');
+    if (inputArt) {
+      Data.Artistas = inputArt.value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    }
     
     let lineasHorarios = document.getElementById('input-horarios').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     if (Data.Horarios) Data.Horarios = lineasHorarios;

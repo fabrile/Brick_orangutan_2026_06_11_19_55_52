@@ -152,4 +152,40 @@ canvas, svg, .p5Canvas {
   
 }
 
+/* ==========================================
+   Pestañas del Menú Lateral
+   ========================================== */
+.tabs-container {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 15px;
+  gap: 5px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 5px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666666;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  margin-bottom: -2px;
+}
+
+.tab-btn:hover {
+  color: #945a0c;
+}
+
+.tab-btn.active {
+  color: #945a0c;
+  border-bottom: 2px solid #945a0c;
+}
+
+
 
