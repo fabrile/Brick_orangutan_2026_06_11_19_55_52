@@ -494,6 +494,41 @@ function mostrarMenuCarga() {
   let sidebar = document.createElement('div');
   sidebar.className = 'control-sidebar';
 
+  // Función para leer todos los campos, actualizar el objeto global Data y redibujar el canvas
+  function actualizarYRedibujar() {
+    let inputNombre = document.getElementById('input-nombre-espacio');
+    if (inputNombre) Data.NombreEspacio = inputNombre.value.trim();
+    
+    let inputRef = document.getElementById('inputReferente');
+    if (inputRef) Data.Referente = inputRef.value.split(',').map(s => s.trim()).filter(s => s !== '');
+    
+    let inputAct = document.getElementById('input-actividades');
+    if (inputAct) {
+      Data.Actividades = inputAct.value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    }
+    
+    let inputArt = document.getElementById('input-artistas');
+    if (inputArt) {
+      Data.Artistas = inputArt.value.split('\n').map(s => s.trim()).filter(s => s !== '');
+    }
+    
+    let inputHor = document.getElementById('input-horarios');
+    if (inputHor) {
+      let lineasHorarios = inputHor.value.split('\n').map(s => s.trim()).filter(s => s !== '');
+      if (Data.Horarios) Data.Horarios = lineasHorarios;
+      if (Data.Horario) Data.Horario = lineasHorarios;
+    }
+    
+    let inputDir = document.getElementById('input-direccion');
+    if (inputDir) {
+      let lineasDireccion = inputDir.value.split('\n').map(s => s.trim()).filter(s => s !== '');
+      if (Data.Dirección) Data.Dirección = lineasDireccion;
+      if (Data.Direccion) Data.Direccion = lineasDireccion;
+    }
+
+    redraw();
+  }
+
   // Título del formulario
   let title = document.createElement('h2');
   title.innerText = 'Crear Placas para Recorrido de las Artes 2026';
@@ -615,6 +650,7 @@ function mostrarMenuCarga() {
     input.onblur = function() {
       input.style.backgroundColor = '#fafafa';
       input.style.borderColor = '#dcdcdc';
+      actualizarYRedibujar();
     };
     grupo.appendChild(input);
     
@@ -634,6 +670,9 @@ function mostrarMenuCarga() {
     let textarea = document.createElement('textarea');
     textarea.id = id;
     textarea.value = valorInicial;
+    textarea.onblur = function() {
+      actualizarYRedibujar();
+    };
     grupo.appendChild(textarea);
     
     return grupo;
@@ -751,29 +790,7 @@ function mostrarMenuCarga() {
   boton.className = 'btn-generate';
   boton.innerText = 'Generar Cartel';
   boton.onclick = function() {
-    // Actualizar objeto Data
-    Data.NombreEspacio = document.getElementById('input-nombre-espacio').value.trim();
-    Data.Referente = document.getElementById('inputReferente').value.split(',').map(s => s.trim()).filter(s => s !== '');
-    
-    let inputAct = document.getElementById('input-actividades');
-    if (inputAct) {
-      Data.Actividades = inputAct.value.split('\n').map(s => s.trim()).filter(s => s !== '');
-    }
-    let inputArt = document.getElementById('input-artistas');
-    if (inputArt) {
-      Data.Artistas = inputArt.value.split('\n').map(s => s.trim()).filter(s => s !== '');
-    }
-    
-    let lineasHorarios = document.getElementById('input-horarios').value.split('\n').map(s => s.trim()).filter(s => s !== '');
-    if (Data.Horarios) Data.Horarios = lineasHorarios;
-    if (Data.Horario) Data.Horario = lineasHorarios;
-    
-    let lineasDireccion = document.getElementById('input-direccion').value.split('\n').map(s => s.trim()).filter(s => s !== '');
-    if (Data.Dirección) Data.Dirección = lineasDireccion;
-    if (Data.Direccion) Data.Direccion = lineasDireccion;
-
-    // Ejecutar redibujado de p5.js
-    redraw();
+    actualizarYRedibujar();
   };
   sidebar.appendChild(boton);
 
