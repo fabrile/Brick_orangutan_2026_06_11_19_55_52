@@ -496,7 +496,7 @@ function mostrarMenuCarga() {
 
   // Título del formulario
   let title = document.createElement('h2');
-  title.innerText = 'Crear Imagen para Recorrido';
+  title.innerText = 'Crear Placas para Recorrido de las Artes 2026';
   sidebar.appendChild(title);
 
   // Pestañas del menú lateral
@@ -520,7 +520,7 @@ function mostrarMenuCarga() {
   grupoSeleccion.className = 'form-group';
   
   let labelSeleccion = document.createElement('label');
-  labelSeleccion.innerText = 'Seleccionar Espacio';
+  labelSeleccion.innerText = 'Seleccionar Espacio/Taller';
   labelSeleccion.setAttribute('for', 'select-espacio');
   grupoSeleccion.appendChild(labelSeleccion);
   
@@ -569,6 +569,16 @@ function mostrarMenuCarga() {
       let dirs = espacioSeleccionado.Dirección || espacioSeleccionado.Direccion || [];
       if (Data.Dirección) Data.Dirección = dirs;
       if (Data.Direccion) Data.Direccion = dirs;
+      
+      // Borrar las imágenes previamente cargadas para el nuevo espacio
+      LogoTaller = null;
+      ImagenEspacio = null;
+      
+      // Limpiar los inputs tipo file en el formulario
+      let inputLogo = document.getElementById('input-logo-taller');
+      if (inputLogo) inputLogo.value = '';
+      let inputImagen = document.getElementById('input-imagen-espacio');
+      if (inputImagen) inputImagen.value = '';
       
       redraw();
     }
@@ -670,7 +680,7 @@ function mostrarMenuCarga() {
   }
 
   // Nombre del Espacio
-  let grupoNombre = crearGrupoInputText('Nombre del Espacio', 'input-nombre-espacio', Data.NombreEspacio || '');
+  let grupoNombre = crearGrupoInputText('Nombre del Espacio/Taller', 'input-nombre-espacio', Data.NombreEspacio || '');
   sidebar.appendChild(grupoNombre);
 
   // Referente
