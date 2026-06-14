@@ -12,6 +12,7 @@ let LogoASL;
 let LogoPotrero;
 let LogoSanLuis;
 let PuntoMapa;
+let GuardaInferior;
 let LogoTaller = null;
 let EspaciosData = {};
 
@@ -159,7 +160,8 @@ async function setup() {
       LogoASL,
       LogoPotrero,
       LogoSanLuis,
-      PuntoMapa
+      PuntoMapa,
+      GuardaInferior
     ] = await Promise.all([
       loadAsset(loadFont('fonts/RobotoFlex-VariableFont.ttf')),
       loadAsset(loadImage("assets/Fondo.jpg")),
@@ -172,6 +174,7 @@ async function setup() {
       loadAsset(loadImage("assets/ElPotrero_white.png")),
       loadAsset(loadImage("assets/SanLuis_white.png")),
       loadAsset(loadImage("assets/PuntoMapa.png")),
+      loadAsset(loadImage("assets/GuardaInferior.png")),
     ]);
     console.log("¡Todos los recursos se cargaron correctamente!");
     
@@ -228,9 +231,12 @@ function mostrarLogos(){
     tint(255)
     
     //  Mapa
-    f= 100/PuntoMapa.height
-    image(PuntoMapa, 580, 950, PuntoMapa.width*f, PuntoMapa.height*f);
+    f= 110/PuntoMapa.height
+    image(PuntoMapa, 585, 997, PuntoMapa.width*f, PuntoMapa.height*f);
     
+    // Guarda Inferior
+    f= 628/GuardaInferior.width
+    image(GuardaInferior, 428, 936, GuardaInferior.width*f,  GuardaInferior.height*f);
 
     // texto y logos organizan
     fill(255,255,255,255);
@@ -431,7 +437,7 @@ function mostrarTexto(){
     let direccion = Data.Dirección || Data.Direccion;
     if (direccion) {
       for (let i = 0; i < direccion.length; i++) {
-        text(direccion[i], 680, 990 + i * 32);
+        text(direccion[i], 680, 1028 + i * 32);
       }
     }
 
