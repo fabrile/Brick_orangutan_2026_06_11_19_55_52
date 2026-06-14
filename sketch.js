@@ -51,7 +51,15 @@ let Data = {
   ]
 }
 */
+
+function mostrarMenuCarga() {
+  
+}
+
+
+
 async function setup() {
+
   // 1. Crear e inyectar la pantalla de carga en el DOM
   let loadingContainer = document.createElement('div');
   loadingContainer.id = 'loading-screen';
@@ -289,16 +297,62 @@ function mostrarTexto(){
       text(nombre.toUpperCase(), 610, artistasv - 100, 420, 75);
       pop();
     } else {
+      
       // Si NO hay logo de taller, el nombre va en el cabezal ocupando ese espacio con letras más grandes
       push();
       fill(148, 90, 12, 255);
       textFont(robotoFlex, {
         fontVariationSettings: `'wght' ${800}, 'wdth' ${100}`
       });
-      textSize(60);
+      
+      //
+      let maxW = 400;
+      let maxH = 230;
+      let label = nombre.toUpperCase();
+      let currentSize = 60;
+      
+      // Ajustar dinámicamente el tamaño de la tipografía para que quepa en el rectángulo
+      while (currentSize > 12) {
+        textSize(currentSize);
+        let words = label.split(/\s+/);
+        let fitsWords = true;
+        
+        // Verificar que ninguna palabra individual supere el ancho disponible
+        for (let w of words) {
+          if (textWidth(w) > maxW) {
+            fitsWords = false;
+            break;
+          }
+        }
+        
+        if (fitsWords) {
+          let line = '';
+          let lineCount = 1;
+          for (let n = 0; n < words.length; n++) {
+            let testLine = line + words[n] + ' ';
+            if (textWidth(testLine) > maxW && n > 0) {
+              line = words[n] + ' ';
+              lineCount++;
+            } else {
+              line = testLine;
+            }
+          }
+          
+          let estimatedHeight = lineCount * textLeading();
+          if (estimatedHeight <= maxH) {
+            break;
+          }
+        }
+        currentSize--;
+      }
+      
+      textSize(currentSize);
       textAlign(CENTER, CENTER);
-      // El cabezal va desde X=540 a X=1047 (ancho 507), Y=33 a Y=367 (alto 334)
-      text(nombre.toUpperCase(), 540, 33, 507, 334);
+      // El cabezal va desde X=600 a X=971 (ancho 371), Y=116 a Y=346 (alto 230)
+      text(label, 600, 116, maxW, maxH);
+      
+      //
+
       pop();
     }
 
