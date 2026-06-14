@@ -52,12 +52,83 @@ let Data = {
 }
 */
 async function setup() {
+  // 1. Crear e inyectar la pantalla de carga en el DOM
+  let loadingContainer = document.createElement('div');
+  loadingContainer.id = 'loading-screen';
+  loadingContainer.style.position = 'fixed';
+  loadingContainer.style.top = '0';
+  loadingContainer.style.left = '0';
+  loadingContainer.style.width = '100vw';
+  loadingContainer.style.height = '100vh';
+  loadingContainer.style.backgroundColor = '#f7f7f9';
+  loadingContainer.style.display = 'flex';
+  loadingContainer.style.flexDirection = 'column';
+  loadingContainer.style.justifyContent = 'center';
+  loadingContainer.style.alignItems = 'center';
+  loadingContainer.style.zIndex = '9999';
+  loadingContainer.style.fontFamily = 'system-ui, -apple-system, sans-serif';
+  loadingContainer.style.transition = 'opacity 0.4s ease';
+
+  // Título
+  let loadingTitle = document.createElement('h3');
+  loadingTitle.innerText = 'Cargando Recursos...';
+  loadingTitle.style.color = '#333333';
+  loadingTitle.style.marginBottom = '20px';
+  loadingTitle.style.fontWeight = '600';
+  loadingContainer.appendChild(loadingTitle);
+
+  // Barra exterior
+  let progressOuter = document.createElement('div');
+  progressOuter.style.width = '300px';
+  progressOuter.style.height = '10px';
+  progressOuter.style.backgroundColor = '#e0e0e0';
+  progressOuter.style.borderRadius = '5px';
+  progressOuter.style.overflow = 'hidden';
+  progressOuter.style.boxShadow = 'inset 0 1px 3px rgba(0,0,0,0.1)';
+  
+  // Barra interior
+  let progressInner = document.createElement('div');
+  progressInner.style.width = '0%';
+  progressInner.style.height = '100%';
+  progressInner.style.backgroundColor = '#945a0c'; // Color dorado a tono con el cartel
+  progressInner.style.transition = 'width 0.15s ease';
+  progressOuter.appendChild(progressInner);
+  loadingContainer.appendChild(progressOuter);
+
+  // Porcentaje
+  let percentText = document.createElement('span');
+  percentText.innerText = '0%';
+  percentText.style.marginTop = '12px';
+  percentText.style.color = '#666666';
+  percentText.style.fontSize = '0.85rem';
+  loadingContainer.appendChild(percentText);
+
+  document.body.appendChild(loadingContainer);
+
+  let totalAssets = 12;
+  let loadedCount = 0;
+
+  function updateProgress() {
+    loadedCount++;
+    let percent = Math.round((loadedCount / totalAssets) * 100);
+    progressInner.style.width = percent + '%';
+    percentText.innerText = percent + '%';
+  }
+
+  const loadAsset = (promise) => {
+    return promise.then(res => {
+      updateProgress();
+      return res;
+    });
+  };
+
   createCanvas(1080, 1335);
    
   try {
     // Cargar base de datos de los espacios
     const resData = await fetch('data.json');
     EspaciosData = await resData.json();
+    updateProgress();
     
     // Inicializar con los datos de "Generico" o el primer espacio de la lista
     if (EspaciosData) {
@@ -68,6 +139,7 @@ async function setup() {
         Data.NombreEspacio = firstKey;
       }
     }
+
     [
       robotoFlex,
       Fondo,
@@ -81,26 +153,31 @@ async function setup() {
       LogoSanLuis,
       PuntoMapa
     ] = await Promise.all([
-      loadFont('fonts/RobotoFlex-VariableFont.ttf'),
-      loadImage("assets/Fondo.jpg"),
-      loadImage("assets/AVA_white.png"),
-      loadImage("assets/Recorrido.png"),
-      loadImage("assets/FSA_white.png"),
-      loadImage("assets/JuanaKoslay_white.png"),
-      loadImage("assets/ElVolcan_white.png"),
-      loadImage("assets/ASL_white.png"),
-      loadImage("assets/ElPotrero_white.png"),
-      loadImage("assets/SanLuis_white.png"),
-      loadImage("assets/PuntoMapa.png"),
+      loadAsset(loadFont('fonts/RobotoFlex-VariableFont.ttf')),
+      loadAsset(loadImage("assets/Fondo.jpg")),
+      loadAsset(loadImage("assets/AVA_white.png")),
+      loadAsset(loadImage("assets/Recorrido.png")),
+      loadAsset(loadImage("assets/FSA_white.png")),
+      loadAsset(loadImage("assets/JuanaKoslay_white.png")),
+      loadAsset(loadImage("assets/ElVolcan_white.png")),
+      loadAsset(loadImage("assets/ASL_white.png")),
+      loadAsset(loadImage("assets/ElPotrero_white.png")),
+      loadAsset(loadImage("assets/SanLuis_white.png")),
+      loadAsset(loadImage("assets/PuntoMapa.png")),
     ]);
     console.log("¡Todos los recursos se cargaron correctamente!");
+    
+    // Ocultar pantalla de carga con desvanecimiento
+    loadingContainer.style.opacity = '0';
+    setTimeout(() => {
+      loadingContainer.remove();
+    }, 400);
+
     mostrarMenuCarga();
-    } catch (error) {
-      //console.error("Error crítico durante la carga de assets:", error);
+  } catch (error) {
+    // Si falla algo, removemos la pantalla de carga para no bloquear al usuario
+    console.error(error);
   }
-
-
-
 }
 
 function draw() {
@@ -210,16 +287,18 @@ function mostrarTexto(){
     text(nombre.toUpperCase(), 610, artistasv - 110, 420, 75);
     pop();
 
-    // Coordinador arriba de ARTISTAS
-    let coordinador = (Data.Coordinador || []).join(', ');
-    if (coordinador) {
+    //Referente arriba de ARTISTAS
+    let Referente = (Data.Referente || []).join(', ');
+    if (Referente) {
       push();
       fill(100, 100, 100, 255);
       textFont(robotoFlex, {
         fontVariationSettings: `'wght' ${600}, 'wdth' ${100}`
       });
+      /*
       textSize(18);
-      text("Coordina: " + coordinador, 610, artistasv - 50);
+      text("Referente: " +Referente, 610, artistasv - 50);
+      */
       pop();
     }
 
@@ -335,7 +414,7 @@ function mostrarMenuCarga() {
     let espacioSeleccionado = EspaciosData[select.value];
     if (espacioSeleccionado) {
       document.getElementById('input-nombre-espacio').value = select.value;
-      document.getElementById('input-coordinador').value = (espacioSeleccionado.Coordinador || []).join(', ');
+      document.getElementById('inputReferente').value = (espacioSeleccionado.Referente || []).join(', ');
       document.getElementById('input-actividades').value = (espacioSeleccionado.Actividades || []).join('\n');
       document.getElementById('input-artistas').value = (espacioSeleccionado.Artistas || []).join('\n');
       document.getElementById('input-horarios').value = (espacioSeleccionado.Horarios || espacioSeleccionado.Horario || []).join('\n');
@@ -343,7 +422,7 @@ function mostrarMenuCarga() {
       
       // Actualizar objeto global Data
       Data.NombreEspacio = select.value;
-      Data.Coordinador = espacioSeleccionado.Coordinador || [];
+      DataReferente = espacioSeleccionadoReferente || [];
       Data.Actividades = (espacioSeleccionado.Actividades || []).map(s => s.trim()).filter(s => s !== '');
       Data.Artistas = (espacioSeleccionado.Artistas || []).map(s => s.trim()).filter(s => s !== '');
       
@@ -455,10 +534,10 @@ function mostrarMenuCarga() {
   let grupoNombre = crearGrupoInputText('Nombre del Espacio', 'input-nombre-espacio', Data.NombreEspacio || '');
   sidebar.appendChild(grupoNombre);
 
-  // Coordinador
-  let coorValor = (Data.Coordinador || []).join(', ');
-  let grupoCoordinador = crearGrupoInputText('Coordinador', 'input-coordinador', coorValor);
-  sidebar.appendChild(grupoCoordinador);
+  //Referente
+  let coorValor = (Data.Referente || []).join(', ');
+  let grupReferente = crearGrupoInputText('Referente', 'inputReferente', coorValor);
+  sidebar.appendChild(grupReferente);
 
   // Actividades
   let actValor = Data.Actividades ? Data.Actividades.join('\n') : '';
@@ -491,7 +570,7 @@ function mostrarMenuCarga() {
   boton.onclick = function() {
     // Actualizar objeto Data
     Data.NombreEspacio = document.getElementById('input-nombre-espacio').value.trim();
-    Data.Coordinador = document.getElementById('input-coordinador').value.split(',').map(s => s.trim()).filter(s => s !== '');
+    DataReferente = document.getElementById('input-Referente').value.split(',').map(s => s.trim()).filter(s => s !== '');
     Data.Actividades = document.getElementById('input-actividades').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     Data.Artistas = document.getElementById('input-artistas').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     
