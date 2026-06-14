@@ -204,7 +204,7 @@ function mostrarLogos(){
     rect(455,1335-200,5,200,0,0,0,0)
 
     // Logo Recorrido
-    f= 334/Recorrido.height
+    f= 385/Recorrido.width
     let recorridoW = Recorrido.width*f;
     image(Recorrido, 33, 33, recorridoW, Recorrido.height*f);
 
@@ -259,35 +259,50 @@ function mostrarLogos(){
 function mostrarTexto(){
 
     // texto de los logos de arriba
-    textSize(20);
+    textSize(18);
     fill(0,0,0,255)
     textAlign(CENTER)
     textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${800}, 'wdth' ${85}`});
-    text("DECLARADO DE INTERÉS", 350, 170);
+    fontVariationSettings: `'wght' ${800}, 'wdth' ${80}`});
+    text("DECLARADO DE INTERÉS", 315, 165);
     textFont(robotoFlex, {
     fontVariationSettings: `'wght' ${800}, 'wdth' ${110}`});
-    text("CULTURAL Y TURÍSTICO", 350, 195);
-    textSize(35);
+    text("CULTURAL Y TURÍSTICO", 315, 185);
+    textSize(32);
     textFont(robotoFlex, {
     fontVariationSettings: `'wght' ${600}, 'wdth' ${110}`});
-    text("4 y 5 de JULIO", 350, 380);
+    text("4 y 5 de JULIO", 315, 340);
 
     //Titulos
     textAlign(LEFT)
 
-    // Nombre del Espacio arriba de ARTISTAS
+    // Nombre del Espacio arriba de ARTISTAS o en el Cabezal (dependiendo de si hay logo de taller)
     let nombre = Data.NombreEspacio || "Generico";
-    push();
-    fill(148, 90, 12, 255);
-    textFont(robotoFlex, {
-      fontVariationSettings: `'wght' ${800}, 'wdth' ${100}`
-    });
-    textSize(22);
-    text(nombre.toUpperCase(), 610, artistasv - 110, 420, 75);
-    pop();
+    if (LogoTaller) {
+      // Si hay logo de taller, el nombre va arriba de ARTISTAS en tamaño pequeño
+      push();
+      fill(148, 90, 12, 255);
+      textFont(robotoFlex, {
+        fontVariationSettings: `'wght' ${800}, 'wdth' ${100}`
+      });
+      textSize(22);
+      text(nombre.toUpperCase(), 610, artistasv - 100, 420, 75);
+      pop();
+    } else {
+      // Si NO hay logo de taller, el nombre va en el cabezal ocupando ese espacio con letras más grandes
+      push();
+      fill(148, 90, 12, 255);
+      textFont(robotoFlex, {
+        fontVariationSettings: `'wght' ${800}, 'wdth' ${100}`
+      });
+      textSize(60);
+      textAlign(CENTER, CENTER);
+      // El cabezal va desde X=540 a X=1047 (ancho 507), Y=33 a Y=367 (alto 334)
+      text(nombre.toUpperCase(), 540, 33, 507, 334);
+      pop();
+    }
 
-    //Referente arriba de ARTISTAS
+    // Referente arriba de ARTISTAS
     let Referente = (Data.Referente || []).join(', ');
     if (Referente) {
       push();
@@ -295,10 +310,11 @@ function mostrarTexto(){
       textFont(robotoFlex, {
         fontVariationSettings: `'wght' ${600}, 'wdth' ${100}`
       });
-      /*
       textSize(18);
-      text("Referente: " +Referente, 610, artistasv - 50);
-      */
+      // Lo posicionamos a artistasv - 25 si hay LogoTaller (para no chocar con el nombre),
+      // o a artistasv - 45 si no hay LogoTaller (más espaciado)
+      let refY = LogoTaller ? (artistasv - 25) : (artistasv - 45);
+      //text("Referente: " + Referente, 610, refY);
       pop();
     }
 
@@ -422,7 +438,7 @@ function mostrarMenuCarga() {
       
       // Actualizar objeto global Data
       Data.NombreEspacio = select.value;
-      DataReferente = espacioSeleccionadoReferente || [];
+      Data.Referente = espacioSeleccionado.Referente || [];
       Data.Actividades = (espacioSeleccionado.Actividades || []).map(s => s.trim()).filter(s => s !== '');
       Data.Artistas = (espacioSeleccionado.Artistas || []).map(s => s.trim()).filter(s => s !== '');
       
@@ -570,7 +586,7 @@ function mostrarMenuCarga() {
   boton.onclick = function() {
     // Actualizar objeto Data
     Data.NombreEspacio = document.getElementById('input-nombre-espacio').value.trim();
-    DataReferente = document.getElementById('input-Referente').value.split(',').map(s => s.trim()).filter(s => s !== '');
+    Data.Referente = document.getElementById('inputReferente').value.split(',').map(s => s.trim()).filter(s => s !== '');
     Data.Actividades = document.getElementById('input-actividades').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     Data.Artistas = document.getElementById('input-artistas').value.split('\n').map(s => s.trim()).filter(s => s !== '');
     
