@@ -210,16 +210,22 @@ function draw() {
 function mostrarLogos(){
   push()
 
-    // Pie de página
-    fill(148, 90, 12, 255)
-    rect(0,1335-200,1080,200,50,50,50,50)
-    fill(220,219,255,255)
-    rect(455,1335-200,5,200,0,0,0,0)
-
     // Logo Recorrido
     f= 385/Recorrido.width
     let recorridoW = Recorrido.width*f;
     image(Recorrido, 33, 33, recorridoW, Recorrido.height*f);
+    
+    // Logo Recorrido Marca de Agua
+    f= 1000/Recorrido.height
+    tint(100, 50)   //Marca de agua lavada
+    image(Recorrido, 924, 143, Recorrido.width*f, Recorrido.height*f);
+    tint(255)       //Color Normal
+    
+        // Pie de página
+    fill(148, 90, 12, 255)
+    rect(0,1335-200,1080,200,50,50,50,50)
+    fill(220,219,255,255)
+    rect(455,1335-200,5,200,0,0,0,0)
 
     // Logo Taller al lado si existe
     if (LogoTaller) {
@@ -243,34 +249,42 @@ function mostrarLogos(){
         image(LogoTaller, drawX, drawY, drawW, drawH);
       
 
+    } 
+
+    //Punto Mapa
+    tamaño = 110
+    if (modoPestana == 'espacio') {
+      //  Mapa
+      f= tamaño/PuntoMapa.height
+      image(PuntoMapa, 585, 947, PuntoMapa.width*f, PuntoMapa.height*f);
+    }else{
+      f= tamaño/PuntoMapa.height
+      image(PuntoMapa, 585, 997, PuntoMapa.width*f, PuntoMapa.height*f);
     }
-
-    f= 1000/Recorrido.height
-    tint(100, 50)
-    image(Recorrido, 924, 143, Recorrido.width*f, Recorrido.height*f);
-    tint(255)
     
-    //  Mapa
-    f= 110/PuntoMapa.height
-    image(PuntoMapa, 585, 997, PuntoMapa.width*f, PuntoMapa.height*f);
-    
-    // Guarda Inferior
-    f= 628/GuardaInferior.width
-    image(GuardaInferior, 428, 936, GuardaInferior.width*f,  GuardaInferior.height*f);
-
     // texto y logos organizan
     fill(255,255,255,255);
     textSize(23);
     text("Organizan:", 44, 1167+23);
-   
-    f = 91/LogoFSA.height
-    image(LogoFSA, 258, 1212, LogoFSA.width*f, LogoFSA.height*f);
-    f = 91/LogoAVA.height
-    image(LogoAVA, 44, 1212, LogoAVA.width*f, LogoAVA.height*f);
-    text("Acompañan:", 489, 1167+23);
+    // primero AVA o FSA de forma aleatoria
+    tamaño = 90
+    if (Math.random()<0.5){
+      f = tamaño/LogoFSA.height
+      image(LogoFSA, 258, 1212, LogoFSA.width*f, LogoFSA.height*f);
+      f = 91/LogoAVA.height
+      image(LogoAVA, 44, 1212, LogoAVA.width*f, LogoAVA.height*f);
 
-    // logos acompañan
-    tamaño = 80
+    }else{
+      f = tamaño/LogoFSA.height
+      image(LogoFSA, 44, 1212, LogoFSA.width*f, LogoFSA.height*f);
+      f = 91/LogoAVA.height
+      image(LogoAVA, 258, 1212, LogoAVA.width*f, LogoAVA.height*f);
+
+    }
+ 
+    // Testo y logos acompañan
+    text("Acompañan:", 489, 1167+23);
+    tamaño = 75
     f = tamaño/LogoJuanaKoslay.height
     image(LogoJuanaKoslay, 489, 1222, LogoJuanaKoslay.width*f, LogoJuanaKoslay.height*f);
     f = tamaño/LogoElVolcan.height
@@ -280,10 +294,9 @@ function mostrarLogos(){
     f = tamaño/LogoSanLuis.height
     image(LogoSanLuis, 803, 1212, LogoSanLuis.width*f, LogoSanLuis.height*f);
     f = tamaño/LogoASL.height
-
     tamaño = 70
     f = tamaño/LogoASL.height
-    image(LogoASL, 950, 1222, LogoASL.width*f, LogoASL.height*f);
+    image(LogoASL, 945, 1220, LogoASL.width*f, LogoASL.height*f);
 
        //image(LogoASL, 1080/2 + tamaño-10 + 150 + 150, 1335 - 85, LogoASL.width*f, LogoASL.height*f);
 
@@ -293,19 +306,19 @@ function mostrarLogos(){
 function mostrarTexto(){
 
     // texto de los logos de arriba
-    textSize(18);
+    textSize(20);
     fill(0,0,0,255)
     textAlign(CENTER)
     textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${800}, 'wdth' ${80}`});
-    text("DECLARADO DE INTERÉS", 315, 165);
+    fontVariationSettings: `'wght' ${600}, 'wdth' ${45}`});
+    text("DECLARADO DE INTERÉS", 315, 145);
     textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${800}, 'wdth' ${110}`});
-    text("CULTURAL Y TURÍSTICO", 315, 185);
+    fontVariationSettings: `'wght' ${600}, 'wdth' ${62}`});
+    text("CULTURAL Y TURÍSTICO", 315, 170);
     textSize(32);
     textFont(robotoFlex, {
-    fontVariationSettings: `'wght' ${600}, 'wdth' ${110}`});
-    text("4 y 5 de JULIO", 315, 340);
+    fontVariationSettings: `'wght' ${500}, 'wdth' ${110}`});
+    text("4 y 5 de JULIO", 315, 355);
 
     //Titulos
     textAlign(LEFT)
@@ -321,6 +334,8 @@ function mostrarTexto(){
       });
       textSize(22);
       text(nombre.toUpperCase(), 610, artistasv - 100, 420, 75);
+
+ 
       pop();
     } else {
       
@@ -398,45 +413,45 @@ function mostrarTexto(){
       pop();
     }
 
-    textSize(24)
+    textSize(25)
     textFont(robotoFlex, {
     fontVariationSettings: `'wght' ${700}, 'wdth' ${110}`});
-    if (modoPestana !== 'imagen') {
+    if (modoPestana == 'espacio') {
       text("ACTIVIDADES:", 50, artistasv);
       text("ARTISTAS", 610, artistasv);
     }
     text("HORARIOS", 50, horariosv);
 
-    // Listas con letra liviana
+    // Textos de columnas con letra liviana
     fill(20, 20, 20);
-    textSize(23);
+    textSize(26);
     textFont(robotoFlex, {
-      fontVariationSettings: `'wght' ${500}, 'wdth' ${100}`
+      fontVariationSettings: `'wght' ${400}, 'wdth' ${100}`
     });
 
-    if (modoPestana !== 'imagen') {
+    if (modoPestana == 'espacio') {
+      
       // Lista de Actividades
       if (Data.Actividades) {
         for (let i = 0; i < Data.Actividades.length; i++) {
-          text(Data.Actividades[i], 50, artistasv + 40 + i * 32);
+          text("> " + Data.Actividades[i], 50, artistasv + 50 + i * 33);
         }
       }
-
       // Lista de Artistas (con soporte para dos columnas si superan los 15 artistas)
       if (Data.Artistas) {
-        let limit = 15;
+        let limit = 13;
         let col2X = 840;
         
         push();
         if (Data.Artistas.length > limit) {
           // Reducimos un poco el tamaño de letra y la separación si hay muchos artistas para evitar desborde
-          textSize(19);
-          let spacing = 28;
+          textSize(18);
+          let spacing = 33;
           for (let i = 0; i < Data.Artistas.length; i++) {
             if (i < limit) {
-              text(Data.Artistas[i], 610, artistasv + 40 + i * spacing);
+              text(Data.Artistas[i], 610, artistasv + 50 + i * spacing);
             } else {
-              text(Data.Artistas[i], col2X, artistasv + 40 + (i - limit) * spacing);
+              text(Data.Artistas[i], col2X, artistasv + 50 + (i - limit) * spacing);
             }
           }
         } else {
@@ -448,6 +463,12 @@ function mostrarTexto(){
         pop();
       }
     } else {
+    
+      // Guarda Inferior
+      f= 628/GuardaInferior.width
+      image(GuardaInferior, 428, 936, GuardaInferior.width*f,  GuardaInferior.height*f);
+
+
       // Mostrar la imagen del espacio/taller cargada
       if (ImagenEspacio) {
         let maxW = 840;
@@ -477,12 +498,19 @@ function mostrarTexto(){
       }
     }
 
-    // Dirección (al lado del Punto de Mapa)
+    
+    // Texto de dirección de Espacio/Taller
     let direccion = Data.Dirección || Data.Direccion;
     if (direccion) {
-      for (let i = 0; i < direccion.length; i++) {
-        text(direccion[i], 680, 1028 + i * 32);
-      }
+        if (modoPestana == 'espacio') {
+          for (let i = 0; i < direccion.length; i++) {
+            text(direccion[i], 687, (947 + 110/2 +32 - direccion.length*32/2) + i * 32);
+          }
+        }else{
+          for (let i = 0; i < direccion.length; i++) {
+            text(direccion[i], 687, (997 + 110/2 +32 - direccion.length*32/2) + i * 32);
+          }
+        }
     }
 
 
