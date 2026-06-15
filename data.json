@@ -1,6 +1,8 @@
 {
- "MUSHAL": {
-    "Actividades": ["Muestra de Arte / Exposición Colectiva"],
+  "MUSHAL": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
     "Artistas": [
       "DARIO ARISTIDES MOLINA",
       "SANDRA FERNANDEZ",
@@ -11,14 +13,25 @@
       "GRICELDA GUERRERO",
       "GABRIELA VARELA",
       "MARIA MOYANO",
+      "LISSY RODRIGUEZ VARGAS",
       "PIPI COSMICA"
     ],
-    "Dirección": ["San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["LISSY RODRIGUEZ VARGAS"]
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "LISSY RODRIGUEZ VARGAS"
+    ]
   },
   "CENTRO CULTURAL PUENTE BLANCO": {
-    "Actividades": ["Exposición Colectiva / Complejo Cultural"],
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
     "Artistas": [
       "GRACIELA BARON",
       "JUAN BERTIN",
@@ -26,41 +39,73 @@
       "RAQUEL DAQUINO",
       "MARIELA MASSACESE"
     ],
-    "Dirección": ["Av. Catamarca y Pasaje de las Artes, San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["LISSY RODRIGUEZ VARGAS"]
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "GRACIELA BARON"
+    ]
   },
   "EXOTICA": {
-    "Actividades": ["Muestra en espacio gastronómico"],
-    "Artistas": ["Gomez Balmaceda Maria Nazarena", "Pascual Gentile"],
-    "Dirección": ["Peatonal San Martín, San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["M. Nazarena Gómez Balmaceda"]
-  },
-  "615 (CALLE Galería)": {
-    "Actividades": ["Galería de arte / Muestras colectivas"],
-    "Artistas": [
-      "Ramiro Gutierrez Corvalan",
-      "Maria Eugenia Bustos y Anello",
-      "Chelco Rezzano",
-      "Eugenia Paone",
-      "Juliana Pallaro",
-      "Andrea Riveros",
-      "Martín Viñals",
-      "Monica Codesido",
-      "Andres Bustos Flitt",
-      "Ariel Zavala",
-      "Matías Sosa",
-      "Gustavo Carbonari",
-      "Lucy Moyano",
-      "Juan Talia"
+    "Actividades": [
+      "Muestra de Arte, Talleres"
     ],
-    "Dirección": ["Peatonal Rivadavia 615, San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Ramiro Gutierrez Corvalan"]
+    "Artistas": [
+      "PASCUAL GENTILE",
+      "MARIA NAZARENA GOMEZ BALMACEDA"
+    ],
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "PASCUAL GENTILE"
+    ]
   },
-"SAN LUIS SHOPPING": {
-    "Actividades": ["Exposición Colectiva en Centro Comercial"],
+  "615": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "CHELCO REZZANO",
+      "EUGENIA PAONE",
+      "JULIANA PALLARO",
+      "ANDREA RIVEROS",
+      "MARTIN VIÑALS",
+      "MONICA CODESIDO",
+      "ANDRES BUSTOS FLITT",
+      "ARIEL ZABALA",
+      "MATIAS SOSA",
+      "LUCY MOYANO",
+      "MAUGE BUSTOS Y ANELLO",
+      "GUSTAVO CARBONARI",
+      "PAULA NADER"
+    ],
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "MAUGE BUSTOS"
+    ]
+  },
+  "SAN LUIS SHOPPING": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
     "Artistas": [
       "ALEJANDRA NARDA",
       "EFER AGUILAR",
@@ -69,87 +114,61 @@
       "LUPE RICO",
       "ANALIA OLEA"
     ],
-    "Dirección": ["Av. Labrador y Ruta 20, San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["ALEJANDRA NARDA"]
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "ALEJANDRA NARDA"
+    ]
   },
   "REFLEJOS ARTE": {
-    "Actividades": ["Escuela de Arte / Formato Pequeño"],
-    "Artistas": ["Gisela Gomez"],
-    "Dirección": ["San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Gisela Gomez"]
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "GISELA GOMEZ - 5 PERSONAS A CONFIRMAR"
+    ],
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "GISELA GOMEZ"
+    ]
   },
   "PIQUI CERAMICA Y MOSAIQUISMO": {
-    "Actividades": ["Espacio de taller y muestra"],
-    "Artistas": ["Jorgelina Piquilloud"],
-    "Dirección": ["9 de Julio 854, San Luis Capital"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Jorgelina Piquilloud"]
-  },
-  "Centro Cultural Municipalidad de El Volcán": {
-    "Actividades": ["Espacio Cultural / Exposición Colectiva"],
-    "Artistas": [
-      "Paola Bustos",
-      "Liliana Coria",
-      "Andrea Puig del Villar",
-      "Graciela Boni"
+    "Actividades": [
+      "Muestra de Arte, Talleres"
     ],
-    "Dirección": ["Av Pringles 1850 (al lado del Salto Colorado), El Volcán"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Graciela Boni"]
+    "Artistas": [
+      "JORGELINA PIQUILLOUD",
+      "PAOLA BASTIAS"
+    ],
+    "Direccion": [
+      "San Luis"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "JORGELINA PIQUILLOUD"
+    ]
   },
-  "Doña Lucha (Los Molles)": {
-    "Actividades": ["Taller / Espacio Abierto"],
-    "Artistas": ["Cecilia Bon"],
-    "Dirección": ["Av San Martín y Pringles, Los Molles"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Cecilia Bon"]
-  },
-  "De Arcilla Taller (Los Molles)": {
-    "Actividades": ["Taller de cerámica"],
-    "Artistas": ["Flor Fernández"],
-    "Dirección": ["La Carretilla s/n, Los Molles"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Flor Fernández"]
-  },
-  "Nueve Musas. Galería de arte (Merlo)": {
-    "Actividades": ["Galería de arte / Muestra"],
-    "Artistas": ["Bernabela Mujica Lainez", "Gabriel Landoni"],
-    "Dirección": ["16 de julio 280, Merlo"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Bernabela Mujica Lainez"]
-  },
-  "La Parra (Merlo)": {
-    "Actividades": ["Espacio Cultural"],
-    "Artistas": ["Andrea Benítez (Prensa y Mate)"],
-    "Dirección": ["Mogote Bayo N° 146, Merlo"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Andrea Benítez"]
-  },
-  "Pucuy arte en Barro (Merlo)": {
-    "Actividades": ["Taller de cerámica / Barro"],
-    "Artistas": ["Fabiana Sanza"],
-    "Dirección": ["Barrio Piedra Blanca, Villa de Merlo"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Fabiana Sanza"]
-  },
-  "Galería Punto de Encuentro (Merlo)": {
-    "Actividades": ["Galería / Muestra"],
-    "Artistas": ["Fernando Sotera"],
-    "Dirección": ["Presb. Becerra s/n, Villa de Merlo"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Fernando Sotera"]
-  },
-  "Taller Viviana Palestini (Juana Koslay)": {
-    "Actividades": ["Taller de arte"],
-    "Artistas": ["Viviana Palestini"],
-    "Dirección": ["Los Carolinos 500, Juana Koslay"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Viviana Palestini"]
-  },
-"CLUB DE CONTADORES": {
-    "Actividades": ["Muestra Colectiva"],
+  "CONTADORES": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
     "Artistas": [
       "VIRGINIA MUNDET",
       "GRACIELA CUSSATI",
@@ -173,185 +192,740 @@
       "LAURA HILDA MARTINEZ",
       "GRUPO DE ESTUDIOS DR LEANDRO DESPOUY",
       "PABLO BRITOS",
+      "SUSANA SENDON",
       "CARINA LEVIN",
       "CHELO ES ARTE"
     ],
-    "Dirección": ["Los Pejes y Ruta 20",
-                  "Juana Koslay"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["PACHI REYNARES"]
-  },
-  "Espacio.s (Cortaderas)": {
-    "Actividades": ["Taller / Muestra"],
-    "Artistas": ["Luis Saez"],
-    "Dirección": ["Arroyo Benítez 303, Cortaderas"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Luis Saez"]
-  },
-  "Taller de Susana (Cortaderas)": {
-    "Actividades": ["Taller / Encuentro Colectivo"],
-    "Artistas": ["Susana Pedernera", "Grupo Enlazando miradas e invitados"],
-    "Dirección": ["Zona rural, Cortaderas"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Susana Pedernera"]
-  },
-  "Centro Cultural Cortaderas": {
-    "Actividades": ["Centro Cultural / Muestra Local"],
-    "Artistas": ["Secretaria de Cultura de Cortaderas"],
-    "Dirección": ["Cortaderas"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Área de Cultura Cortaderas"]
-  },
-  "Espacio Potrero - Daniel (Potrero de los Funes)": {
-    "Actividades": ["Exposición Colectiva"],
-    "Artistas": ["Daniel Mastandrea", "Daniel Juan", "Susana Perrone", "Nico Varvara"],
-    "Dirección": ["Circuito del Lago, Potrero de los Funes"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Daniel Mastandrea"]
-  },
-  "Galería de Arte Potrero de los Funes": {
-    "Actividades": ["Muestra de artistas e invitados"],
-    "Artistas": [
-      "Pueyo Domínguez Mario Alejandro",
-      "Rubén Menas",
-      "Juan Longhini",
-      "Yoyo Feliz",
-      "Carlos Marini",
-      "Indio Cazola",
-      "Laura Jancovich"
+    "Direccion": [
+      "Juana Koslay"
     ],
-    "Dirección": ["Potrero de los Funes"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Mario Alejandro Pueyo Domínguez"]
-  },
-  "Atelier Ronda Baez (Estancia Grande)": {
-    "Actividades": ["Atelier / Taller"],
-    "Artistas": ["Ronda Baez"],
-    "Dirección": ["Ruta 18 s/n, Estancia Grande"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Ronda Baez"]
-  },
-  "Paseo Artesanal Martín Grillo (El Trapiche)": {
-    "Actividades": ["Paseo Artesanal y Muestra"],
-    "Artistas": ["Paseo artesanal martin grillo"],
-    "Dirección": ["San Martín y Pringles, El Trapiche"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Martín Grillo"]
-  },
-  "Avalon (San Francisco)": {
-    "Actividades": ["Taller / Espacio Creativo"],
-    "Artistas": ["Claudia Radio"],
-    "Dirección": ["Calle Volpe s/n, Camino a Punta del Agua, San Francisco"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Claudia Radio"]
-  },
-  "Biblioteca Popular Juan de Dios Escobar (San Francisco)": {
-    "Actividades": ["Biblioteca / Espacio Cultural"],
-    "Artistas": ["Alejandra Marcela Viegas"],
-    "Dirección": ["Calle Belgrano s/n, San Francisco"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Alejandra Marcela Viegas"]
-  },
-  "El Quebracho de los Novios (San Francisco)": {
-    "Actividades": ["Taller / Muestra"],
-    "Artistas": ["Patricia Fitti"],
-    "Dirección": ["Ex Ruta 146 s/n, Pozo del Molle, San Francisco"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Patricia Fitti"]
-  },
-  "Artemisia Espacio de Arte (San Francisco)": {
-    "Actividades": ["Espacio de Arte"],
-    "Artistas": ["Silvia Cecilia Escudero"],
-    "Dirección": ["San Francisco del Monte de Oro"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Silvia Cecilia Escudero"]
-  },
-  "Rayen Espacio Creativo (San Francisco)": {
-    "Actividades": ["Espacio Creativo"],
-    "Artistas": ["Ramón Alberto Piño"],
-    "Dirección": ["San Francisco del Monte de Oro"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Ramón Alberto Piño"]
-  },
-  "La tiendita de Alquimia Arte (San Francisco)": {
-    "Actividades": ["Tienda de arte / Taller"],
-    "Artistas": ["Gabriela Alejandra Giudici"],
-    "Dirección": ["San Francisco del Monte de Oro"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Gabriela Alejandra Giudici"]
-  },
-  "Centro Cultural Diffalci (La Toma)": {
-    "Actividades": ["Centro Cultural / Muestras Múltiples"],
-    "Artistas": [
-      "Ana Isabel Diffalci",
-      "María José de la Torre",
-      "Nelly Nicola",
-      "Carla Garro",
-      "Valentina Pucacco",
-      "Sofia Allende",
-      "Guillermina Balestro",
-      "Cielo Garcés",
-      "Graciela Assat",
-      "Brisa Correa Villegas",
-      "Rocio Miraglio",
-      "Renée Contreras",
-      "Natalia Seva",
-      "Lyda Lucero Flores",
-      "Carmen Arias",
-      "Carmen Sayago",
-      "Kimy Muñoz"
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
     ],
-    "Dirección": ["25 de Mayo 399 esquina Lafinur, La Toma"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Ana Isabel Diffalci"]
+    "Referente": [
+      "PACHI REYNARES"
+    ]
   },
-  "Escuela Veneciana de Arte (Villa Mercedes)": {
-    "Actividades": ["Escuela de arte / Taller Abierto"],
-    "Artistas": ["Stefano De Battista"],
-    "Dirección": ["Pueyrredón 264, Villa Mercedes"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Stefano De Battista"]
+  "BIBLIOTECA POPULAR URBANO J. NUÑEZ": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "DANIEL MASTANDREA",
+      "DANIEL JUAN",
+      "SUSANA PERRONE",
+      "NICO VARVARA"
+    ],
+    "Direccion": [
+      "Potrero de los Funes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "DANIEL MASTANDREA"
+    ]
   },
-  "Espacio de arte Carola (Villa Mercedes)": {
-    "Actividades": ["Pintura, cerámica y tejidos"],
-    "Artistas": ["Carola Ruiz Encinas", "Tere Encinas", "Marina Sánchez"],
-    "Dirección": ["Pueyrredón 1096, Villa Mercedes"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Carola Ruiz Encinas"]
+  "GALERIA DE ARTE POTRERO DE LOS FUNES": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "MARIO PUEYO DOMINGUEZ"
+    ],
+    "Direccion": [
+      "Potrero de los Funes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "MARIO PUEYO DOMINGUEZ"
+    ]
   },
-  "Taller de arte Anele Giacometti (Villa Mercedes)": {
-    "Actividades": ["Muestra de taller infantil y esgrafiado"],
-    "Artistas": ["Ana Elena Giacometti", "Alumnos del taller"],
-    "Dirección": ["Casa de la Música, Villa Mercedes"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Ana Elena Giacometti"]
+  "CENTRO CULTURAL MUNICIPALIDAD DE EL VOLCAN": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "PAOLA BUSTOS",
+      "LILIANA CORIA",
+      "ANDREA PUIG DEL VILLAR",
+      "GRACIELA BONI"
+    ],
+    "Direccion": [
+      "El Volcán"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "GRACIELA BONI"
+    ]
   },
-  "Baroja - Galería de Exposición y Ventas (Quines)": {
-    "Actividades": ["Galería de Exposición y ventas"],
-    "Artistas": ["Roberto Agüero \"Baroja\""],
-    "Dirección": ["25 de Mayo y San José, Quines"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Roberto Agüero"]
+  "ATELIER RONDA BAEZ": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "DANIEL BOGGIO"
+    ],
+    "Direccion": [
+      "Estancia Grande"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "DANIEL BOGGIO"
+    ]
   },
-  "Reflejos Arte Santa Rosa": {
-    "Actividades": ["Muestra formatos medianos y pequeños"],
-    "Artistas": ["Gómez Macarena"],
-    "Dirección": ["Santa Rosa de Conlara"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Macarena Gómez"]
+  "TALLER QUENTI AIKE": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "CRISTEL MAGNETTO",
+      "MARTIN GATICA",
+      "SILVANA SPAGNOTTO",
+      "ERICA ORTIZ",
+      "JULIO MELTO"
+    ],
+    "Direccion": [
+      "Estancia Grande"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "CRISTEL MAGNETTO"
+    ]
   },
-  "Museo y Centro Cultural de Carpintería": {
-    "Actividades": ["Museo / Centro Cultural - Muestra Colectiva"],
-    "Artistas": ["Miriam Avila", "Lorena Salazar"],
-    "Dirección": ["Carpintería"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Dirección de Cultura de Carpintería"]
+  "PASEO ARTESANAL MARTIN GRILLO": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "DANIEL DEZI",
+      "JUAN DIEZ",
+      "VICTORIA ROMERO",
+      "TALLER MANANTIALES - PROFESORA ALEJANDRA NARDA",
+      "Alumnas:",
+      "Paulina Villegas",
+      "ANA MARIA BALLADORE",
+      "CARINA DIAZ",
+      "FLORENCIA SOLA",
+      "Bibiana Marín",
+      "PATRICIA YRUSTA",
+      "ROSA SAA",
+      "NINI CABRERA",
+      "MUESTRA DE TALLERES LITERARIOS DE EL TRAPICHE CLARA BENNARIS"
+    ],
+    "Direccion": [
+      "El Trapiche"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "MARIELA SAUN"
+    ]
   },
-  "# (La Punta)": {
-    "Actividades": ["Taller / Espacio Abierto"],
-    "Artistas": ["Ramiro Gallardo Iway"],
-    "Dirección": ["B° Aires de San Benito, La Punta"],
-    "Horarios": ["Abierto al público"],
-    "Referente": ["Ramiro Gallardo Iway"]
+  "ESCUELA VENECIANA DE ARTE": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "STEFANO DE BATTISTA"
+    ],
+    "Direccion": [
+      "Villa Mercedes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "STEFANO DE BATTISTA"
+    ]
+  },
+  "ESPACIO DE ARTE CAROLA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "CAROLA RUIZ",
+      "TERE ENCINAS",
+      "MARINA SANCHEZ"
+    ],
+    "Direccion": [
+      "Villa Mercedes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "TERE ENCINAS"
+    ]
+  },
+  "TALLER DE ARTE ANELE GIACOMETTI": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "ANELE GIACOMETTI"
+    ],
+    "Direccion": [
+      "Villa Mercedes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "ANELE GIACOMETTI"
+    ]
+  },
+  "ALUMNOS DE TALLER INFANTIL Y ARTE EN LA DIVERSIDAD": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "ALUMNOS DE TALLER INFANTIL Y ARTE EN LA DIVERSIDAD"
+    ],
+    "Direccion": [
+      "Villa Mercedes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "ANELE GIACOMETTI"
+    ]
+  },
+  "LA CASA DE LA MUSICA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "IVAN GUILLEN",
+      "FALTA CONFIRMAR ARTISTAS"
+    ],
+    "Direccion": [
+      "Villa Mercedes"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "IVAN GUILLEN"
+    ]
+  },
+  "GALERIA PUNTO DE ENCUENTRO": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "MAITE PIZARRO",
+      "JULIETA CHIACCHIARI",
+      "FERNAND MORON",
+      "ESTELA BENAYON",
+      "GABO MANCINI",
+      "ALEJANDRO TOMASELLI",
+      "DIEGO CORNEJO",
+      "FERNANDO SOTERA",
+      "MAY TORO Y DOMINGUEZ",
+      "GUADALUPE GOMEZ VERDI",
+      "CARLOS CRUZ",
+      "MARCELO FREDES",
+      "DARIO CONTRERAS"
+    ],
+    "Direccion": [
+      "Merlo"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "FERNANDO SOTERA"
+    ]
+  },
+  "TALLER VIVIANA PALESTINI": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "VIVIANA PALESTINI",
+      "JOSE NOLA",
+      "FERNANDO RUSSO",
+      "MIRIAM GERBAU",
+      "NORA ROMAN",
+      "NADIA MENEGOSI"
+    ],
+    "Direccion": [
+      "Merlo"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "NORA ROMAN / VIVIANA PALESTINI"
+    ]
+  },
+  "LA PARRA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "MARIA JOSE RODRIGUEZ",
+      "ANA LAURA MONTANI",
+      "FLORENCIA MANTCHOFF",
+      "MARIA FLORENCIA RUFINO",
+      "SOLEDAD CORRADI",
+      "BARBARA SCHNIDER",
+      "ANA PARADISO",
+      "ERICA CABALLERO",
+      "MARC VELEZ",
+      "CARLA RODRIGUEZ",
+      "CRISTINA MIRANDA",
+      "SAM FUNES",
+      "JUAN MANUEL FUSARO",
+      "VITO",
+      "ANDREINA BENITEZ",
+      "DANIELA CARIGLINO ARTISTA INVITADA"
+    ],
+    "Direccion": [
+      "Merlo"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "ANDREINA"
+    ]
+  },
+  "PUCUY ARTE EN BARRO": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "12 Artistas"
+    ],
+    "Direccion": [
+      "Merlo"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "FABIANA SANZA"
+    ]
+  },
+  "ESPACIO AMIGXS DE MERLO": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "LAURA ALVAREZ",
+      "LUIS ANGLADA",
+      "JUAN CARBONEL",
+      "NADIA ROJAS",
+      "ROMINA ZAMBELLI"
+    ],
+    "Direccion": [
+      "Merlo"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "LAURA ALVAREZ"
+    ]
+  },
+  "MUSEO Y CENTRO CULTURAL DE CARPINTERIA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "GRUPO ENLAZANDO MIRADAS",
+      "MUESTRA HUELLAS",
+      "SUSANA PEDERNERA",
+      "JOSE ALANIZ",
+      "RAQUEL PEZZELATO",
+      "LAURA RAPOSO",
+      "DENISE MUÑOZ",
+      "ALICIA FERNANDEZ",
+      "PATRICIA JUVE",
+      "MUESTRA AMOR EN TIEMPOS DE GUERRA",
+      "LORENA SALAZAR"
+    ],
+    "Direccion": [
+      "Carpinteria"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "MALVINA CRESPO"
+    ]
+  },
+  "ESPACIO.S": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "LUIS SAEZ"
+    ],
+    "Direccion": [
+      "Cortaderas"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "LUIS SAEZ"
+    ]
+  },
+  "LA BOHEMIA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "ALICIA FERNANDEZ",
+      "JOSE ANALIZ",
+      "LAURA RAPOSO",
+      "PATRICIA JUVE",
+      "DENISE MUÑOZ",
+      "RAQUEL PEZZELATO",
+      "MAJOYITA",
+      "SONIA AGUILERA",
+      "IVANA CHAVEZ",
+      "MABEL ZUNGRI",
+      "JONATHAN KLUCK",
+      "SUSANA PEDERNERA",
+      "DÉBORA WILKINSON",
+      "CAMILA LINARES"
+    ],
+    "Direccion": [
+      "Cortaderas"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SUSANA PEDERNERA"
+    ]
+  },
+  "CENTRO CULTURAL CORTADERAS": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "MARIEL PONCE",
+      "IVANA CHAVEZ",
+      "MAJOYITAS"
+    ],
+    "Direccion": [
+      "Cortaderas"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SECRETARIA DE CULTURA DE CORTADERAS MARIA ELENA NIEVAS"
+    ]
+  },
+  "REFLEJOS ARTE SANTA ROSA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "MACARENA GOMEZ CONFIRMAR CANTIDAD"
+    ],
+    "Direccion": [
+      "Santa Rosa"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "MACA GOMEZ"
+    ]
+  },
+  "DOÑA LUCHA": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "MARIA JOSE IBARRA DE LA FUENTE",
+      "IVANA CHÁVEZ",
+      "SONIA CASLA",
+      "CAROLINA APARICIO",
+      "JUANA CARRIZO",
+      "CECILIA BON",
+      "MELINA GAYOSO",
+      "GONZALO ALVAREZ"
+    ],
+    "Direccion": [
+      "Los Molles"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "CECILIA BON"
+    ]
+  },
+  "DE ARCILLA TALLER": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "FLOR FERNANDEZ"
+    ],
+    "Direccion": [
+      "Los Molles"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "FLOR FERNANDEZ"
+    ]
+  },
+  "CENTRO CULTURAL DIFFALCI": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "ANA DIFFALCI",
+      "MARIA JOSE DE LA TORRE",
+      "NELLY NICOLA",
+      "CARLA GARRO",
+      "VALENTINA PUCACCO",
+      "SOFIA ALLENDE",
+      "GUILLERMINA BALESTRO",
+      "CIELO GARCÉS",
+      "GRACIELA ASSAT",
+      "BRISA CORREA VILLEGAS",
+      "ROCIO MIRAGLIO",
+      "RENEÉ CONTRERAS",
+      "NATALIA SEBA",
+      "LYDA LUCERO FLORES",
+      "CARMEN ARIAS",
+      "CARMEN SAYAGO",
+      "KIMY MUÑOZ",
+      "RICARDO DE LA TORRE"
+    ],
+    "Direccion": [
+      "LaToma"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "ANA DIFFALCI"
+    ]
+  },
+  "AVALON": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "CLAUDIA DUFAU"
+    ],
+    "Direccion": [
+      "San Francisco"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SILVIA ESCUDERO"
+    ]
+  },
+  "BIBLIOTECA POPULAR JUAN DE DIOS ESCOBAR": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "ALEJANDRA VIEGAS"
+    ],
+    "Direccion": [
+      "San Francisco"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SILVIA ESCUDERO"
+    ]
+  },
+  "EL QUEBRACHO DE LOS NOVIOS": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "PATRICIA FITTI"
+    ],
+    "Direccion": [
+      "San Francisco"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SILVIA ESCUDERO"
+    ]
+  },
+  "ARTEMISIA ESPACIO DE ARTE": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "SILVIA ESCUDERO"
+    ],
+    "Direccion": [
+      "San Francisco"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SILVIA ESCUDERO"
+    ]
+  },
+  "RAYEN ESPACIO CREATIVO": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "RAMÓN ALBERTO PIÑO"
+    ],
+    "Direccion": [
+      "San Francisco"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SILVIA ESCUDERO"
+    ]
+  },
+  "LA TIENDITA DE ALQUIMIA DE ARTE": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "GABRIELA GIUDICI"
+    ],
+    "Direccion": [
+      "San Francisco"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "SILVIA ESCUDERO"
+    ]
+  },
+  "NUEVE MUSAS GALERIA DE ARTE": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "BERNABELA MUJICA LAINEZ",
+      "GABRIEL LANDINI"
+    ],
+    "Direccion": [
+      "La Carolina"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "BERNABELA MUJICA LAINEZ"
+    ]
+  },
+  "BAROJA GALERIA DE EXPOSICION Y VENTAS": {
+    "Actividades": [
+      "Muestra de Arte, Talleres"
+    ],
+    "Artistas": [
+      "ROBERTO BAROJA"
+    ],
+    "Direccion": [
+      "Quines"
+    ],
+    "Horarios": [
+      "Abierto al público",
+      "Sábado 4 de 15 a 21Hs",
+      "Domingo de 15 a 21Hs"
+    ],
+    "Referente": [
+      "ROBERTO BAROJA"
+    ]
   }
 }
