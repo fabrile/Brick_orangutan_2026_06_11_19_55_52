@@ -200,6 +200,14 @@ function draw() {
 
   mostrarLogos()
   mostrarTexto()
+  
+  // Enviamos el evento a Google Analytics
+  gtag('event', 'generar_cartel', {
+    'pestaña_activa': pestañaActual // Opcional: por si quieres saber desde qué pestaña se generó
+  });
+  gtag('event', 'descargar_cartel', {
+    'formato': 'png' // Opcional: un parámetro extra si te sirve guardar el formato
+  });
 
   noLoop()
 }
@@ -282,7 +290,7 @@ function mostrarLogos(){
 
     }
  
-    // Testo y logos acompañan
+    // Texto y logos acompañan
     text("Acompañan:", 489, 1167+23);
     tamaño = 75
     f = tamaño/LogoJuanaKoslay.height
@@ -810,6 +818,16 @@ function mostrarMenuCarga() {
   btnTabEspacio.onclick = function() { updateTabsVisibility('espacio'); };
   btnTabImagen.onclick = function() { updateTabsVisibility('imagen'); };
 
+  // Configurar eventos click para las pestañas (Agregamos tracking de GA4)
+  btnTabEspacio.onclick = function() { 
+    updateTabsVisibility('espacio'); 
+    gtag('event', 'cambiar_pestana', { 'pestana': 'espacio_taller' });
+  };
+  btnTabImagen.onclick = function() { 
+    updateTabsVisibility('imagen'); 
+    gtag('event', 'cambiar_pestana', { 'pestana': 'imagen_espacio' });
+  };
+
   // Ejecutar visibilidad inicial
   updateTabsVisibility(modoPestana);
 
@@ -831,6 +849,13 @@ function mostrarMenuCarga() {
   botonDescargar.innerText = 'Descargar Cartel (PNG)';
   botonDescargar.onclick = function() {
     saveCanvas('cartel_recorrido', 'png');
+
+// 📊 TRACKING: Evento descargar cartel
+    gtag('event', 'descargar_cartel', {
+      'nombre_espacio': Data.NombreEspacio || 'Generico',
+      'pestana_activa': modoPestana
+    });
+
   };
   sidebar.appendChild(botonDescargar);
 
